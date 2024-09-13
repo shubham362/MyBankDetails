@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+	xmlns:m= "sap.suite.ui.microchart"
+	xmlns:layout="sap.ui.layout">
+ <Panel id="pAccountDetails" headerText="Account Details" expandable="false"  width="auto" class="sapUiResponsiveMargin">
+ <content>
+            <HBox id="hBox44">
+
+                <Avatar id="aUserProfile" 
+                src="{/profile}" displaySize="XL" 
+                showBorder="true" 
+                press="onPress"/>
+
+
+                <VBox id="vBox"  class="sapUiSmallMargin sapUiLargeMarginBegin">
+
+                    <!-- <Title text="{i18n>accDetails}" id="accDetails" level="H1"/> -->
+
+                    <HBox id="hBox">
+                        <Label id="lblacnu" text="{i18n>Account Number}" class="sapUiSmallMarginEnd"/>
+                        <Text id="accountNu" text= "{/accountdetails/accountnum}"/>
+                    </HBox>
+
+                    <HBox id="hBox22">
+                        <Label id="lblAcHolderNamId" text="{i18n>Account Name}" class="sapUiSmallMarginEnd"/>
+                        <Text id="idAcHolderNamValue" text=""/>
+                    </HBox>
+
+                    <HBox id="hBox33" class="sapUiSmallMarginBottom">
+                        <Label id="lbl" text="{i18n>IFSCode}" class="sapUiSmallMarginEnd"/>
+                        <Text id="idIF" text="{/ifsc}"/>
+                    </HBox>
+
+
+                    <Button id="openBankDetails" type="Neutral" text="Find More Details" press="onOpenBankDetails" />
+
+                </VBox>
+    </HBox>
+    </content>
+    </Panel>
+ 
+</core:FragmentDefinition>

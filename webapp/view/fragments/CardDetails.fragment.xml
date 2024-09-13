@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+	xmlns:m= "sap.suite.ui.microchart"
+	xmlns:layout="sap.ui.layout">
+ <Panel
+                id="card"
+                headerText="Cards Details"
+                expandable="false"
+                width="auto"
+                class="sapUiResponsiveMargin"
+            >
+                <content>
+                    <List
+                        id="myList" 
+                        items="{oBankDetails>/carddetails}"
+                        
+                        
+                        
+                    >
+                        <items>
+                            <StandardListItem
+                                id="card1"
+                                
+                                type="Navigation"
+                                title=" {oBankDetails>cardcompany} {oBankDetails>cardnumber}"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Active"
+                                highlight="Information"
+                                infoStateInverted="true"
+                                description="{oBankDetails>cardtype}"
+                                infoState="Information"
+                            />
+                            <!-- <StandardListItem
+                                id="card2"
+                                title="Visa Card (21897756565646)"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Active"
+                                highlight="Success"
+                                infoStateInverted="true"
+                                description="Debit Card:assign on 23 Aug 2021"
+                                infoState="Success"
+                            />
+                            <StandardListItem
+                                id="card3"
+                                title="Master Card (21897756565646)"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Active"
+                                highlight="Warning"
+                                infoStateInverted="true"
+                                description="Debit Card:assign on 23 Aug 2021"
+                                infoState="Warning"
+                            /> -->
+                        </items>
+                    </List>
+                </content>
+            </Panel>
+
+</core:FragmentDefinition>

@@ -1,0 +1,90 @@
+<mvc:View
+    xmlns:smartfilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+    xmlns:w="sap.ui.integration.widgets"
+    xmlns:m="sap.suite.ui.microchart"
+    xmlns="sap.m"
+    controllerName="shubham.project1.controller.View1"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="{i18>appTitle}"
+    >
+        <headerContent>
+            <Button
+                id="demobtn"
+                 type="Emphasized"
+                text="home"
+                press="tap"
+            />
+        </headerContent>
+        <content>
+            <core:Fragment
+                id="bankdetailsfragment"
+                fragmentName="shubham.project1.view.fragments.BankDetails"
+                type="XML"
+            />
+
+			<core:Fragment 
+			id="Card"
+			fragmentName="shubham.project1.view.fragments.CardDetails"
+			type="XML"
+			/>
+
+            <!-- <Panel
+                id="card"
+                headerText="Cards Details"
+                expandable="true"
+                width="auto"
+                class="sapUiResponsiveMargin"
+            >
+                <content>
+                    <List
+                        id="myList"
+                        items=""
+                        width="50%"
+                    >
+                        <items>
+                            <StandardListItem
+                                id="card1"
+                                title="Master Card (21897756565646)"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Expired"
+                                highlight="Error"
+                                infoStateInverted="true"
+                                description="Debit Card:assign on 23 Aug 2021"
+                                infoState="Error"
+                            />
+                            <StandardListItem
+                                id="card2"
+                                title="Visa Card (21897756565646)"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Active"
+                                highlight="Success"
+                                infoStateInverted="true"
+                                description="Debit Card:assign on 23 Aug 2021"
+                                infoState="Success"
+                            />
+                            <StandardListItem
+                                id="card3"
+                                title="Master Card (21897756565646)"
+                                iconInset="false"
+                                icon="sap-icon://credit-card"
+                                info="Active"
+                                highlight="Warning"
+                                infoStateInverted="true"
+                                description="Debit Card:assign on 23 Aug 2021"
+                                infoState="Warning"
+                            />
+                        </items>
+                    </List>
+                </content>
+            </Panel> -->
+        </content>
+    </Page>
+</mvc:View>
