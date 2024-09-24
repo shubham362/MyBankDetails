@@ -8,10 +8,19 @@
 >
 <Page id="SecondPage" 
     title="I am In second view" > 
-    
     <content>
-    
-    </content>
+    <FlexBox justifyContent="Center" alignItems="Center" height="100%">
+ <VBox >
+ <Label text="Login" design="Bold" class="sapUiSmallMarginTop" alignItems="Center"></Label> 
+ <Label text="UserName"  design="Bold"></Label>
+ <Input width="400px"></Input> 
+ <Label text="Password" design="Bold" class="sapUiSmallMarginTop"></Label>
+ <Input width="400px" type="Password"></Input> 
+ <Button text="Login" width="400px" type="Emphasized"></Button>
+ </VBox>
+                             
+ </FlexBox> 
+    </content>    
     
     <footer>
 
