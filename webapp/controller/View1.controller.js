@@ -7,8 +7,6 @@ sap.ui.define([
 
         return Controller.extend("shubham.project1.controller.View1", {
             onInit: function () {
-                alert("this is onInit Block")
-                debugger
 
 
                 let OData = {

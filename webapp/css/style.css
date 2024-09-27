@@ -1,1 +1,15 @@
 /* Enter your custom styles here */
+
+.mytextcolor{
+    color: red;
+}
+.mytextfont{
+    font-size: 20px;
+    font-style: italic;
+}
+.mybackgroundcolor{
+    background-color: rgb(128, 0, 38);
+}
+.mybackgroundimage{
+    background-image:url(../Images/backgroundjpg.jpg);
+}

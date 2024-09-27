@@ -8,5 +8,11 @@ sap.ui.define([
         onInit: function() {
              
         }, 
+        login: function () {
+            this.getOwnerComponent().getRouter().navTo("RouteView3");
+            
+             
+        }
+            
       });
 });

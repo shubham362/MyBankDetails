@@ -1,18 +1,108 @@
-<mvc:view
-xmlns:table="sap.ui.table"
+<mvc:View xmlns:table="sap.ui.table"
     xmlns:smartfilterBar="sap.ui.comp.smartfilterbar"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
     controllerName="shubham.project1.controller.Second"
     displayBlock="true">
 
 
-<Page>
-
+<Page title="I am in Grid" id="P3">
 
 <content>
+<Panel headerText="Employee Information" >
+<l:Grid id="G1" vSpacing="1" width="100%">
+    <l:content>
+    <Label id="Emp" text="Employee Id">
+    <layoutData>
+        <l:GridData span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="ep">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+    <Label id="E" text="Employee Name">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="Sk">
+    <layoutData>
+        <l:GridData id="G4" span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+    <Label id="E34" text="Employee Designation">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="EmpDEs">
+    <layoutData>
+        <l:GridData id="0" span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+
+    <Label id="E0" text="Employee Skills">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="Sk0">
+    <layoutData>
+        <l:GridData id="G04" span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+    <Label id="E11" text="Email">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="Sk11">
+    <layoutData>
+        <l:GridData id="G411" span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+    <Label id="E33" text="Phon No">
+    <layoutData>
+        <l:GridData  span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Label>
+    <Input id="Sk3">
+    <layoutData>
+        <l:GridData id="G43" span="L3 M3">
+        </l:GridData>
+     </layoutData>
+    </Input>
+    
+    </l:content>
+ 
+ </l:Grid>
+</Panel>
+ 
+
 </content>
+<footer>
+    <Bar >
+    <contentRight>
+        <Button id="close" text="Sumbit" press="onSumbit" type="Emphasized"></Button>
+    </contentRight>
+    </Bar>
+</footer>
 </Page>
 
-</mvc:view>
+</mvc:View>  

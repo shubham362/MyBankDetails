@@ -6,17 +6,19 @@
     controllerName="shubham.project1.controller.Sample"
     displayBlock="true"
 >
-<Page id="SecondPage" 
-    title="I am In second view" > 
+<Page id="SecondPage" title="I am In second view" class="mybackgroundcolor" > 
     <content>
     <FlexBox justifyContent="Center" alignItems="Center" height="100%">
  <VBox >
- <Label text="Login" design="Bold" class="sapUiSmallMarginTop" alignItems="Center"></Label> 
- <Label text="UserName"  design="Bold"></Label>
+ <HBox >
+    <Label text="Login" design="Bold" class="sapUiSmallMarginTop"></Label>
+ </HBox>
+  
+ <Label text="UserName" class="sapUiSmallMarginTop mytextcolor mytextfont" design="Bold"></Label>
  <Input width="400px"></Input> 
- <Label text="Password" design="Bold" class="sapUiSmallMarginTop"></Label>
+ <Label text="Password" design="Bold" class="sapUiSmallMarginTop mytextcolor mytextfont"></Label>
  <Input width="400px" type="Password"></Input> 
- <Button text="Login" width="400px" type="Emphasized"></Button>
+ <Button text="Login" width="400px" type="Emphasized"  press="login"></Button>
  </VBox>
                              
  </FlexBox> 

@@ -6,6 +6,9 @@ sap.ui.define([
         onInit: function() {
              
         },
+        onSumbit: function () {
+            this.getOwnerComponent().getRouter().navTo("RouteView4");
+        }
 
         
       });

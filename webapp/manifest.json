@@ -125,6 +125,20 @@
           "target": [
             "TargetSample"
           ]
+        },
+        {
+          "name": "RouteView3",
+          "pattern": "secondview",
+          "target": [
+            "TargetSecond"
+          ]
+        },
+        {
+          "name": "RouteView4",
+          "pattern": "FormLayout",
+          "target": [
+            "TargetThird"
+          ]
         }
       ],
       "targets": {
@@ -141,6 +155,20 @@
           "clearControlAggregation": false,
           "viewId": "v2",
           "viewName": "Sample"
+        },
+        "TargetSecond": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "v3",
+          "viewName": "Second"
+        },
+        "TargetThird": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "v4",
+          "viewName": "FormLayout"
         }
       }
     },
