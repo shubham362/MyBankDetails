@@ -13,7 +13,10 @@ function (JSONModel, Device) {
             var oModel = new JSONModel(Device);
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
+            
+            
         }
+        
     };
 
 });

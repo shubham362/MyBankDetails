@@ -12,7 +12,31 @@
 <Page title="I am in Grid" id="P3">
 
 <content>
-<Panel headerText="Employee Information" >
+
+<f:SimpleForm id="Sec" title="Employee Details" editable="false" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+                    <f:content> 
+
+                    <Label text="Employee ID" required="true"></Label>
+                    <Text id="idTxt" ></Text>
+                    
+                    <Label text="Employee Name" required="true"></Label>
+                    <Text id="Nametxt" text="{/empId}"></Text>
+                    
+                    <Label text="Employee Skills" required="true"></Label>
+                    <Text id="Skillstxt" ></Text>
+                     
+                    <Label text="Employee Designation" required="true"></Label>
+                    <Text id="desctxt" ></Text>
+                    
+                    <Label text="Email"></Label>
+                    <Text id="Emailtxt"></Text>
+                    
+                    <Label text="Phone No"></Label >
+                    <Text id="Phonetxt"></Text>
+                    </f:content> 
+                </f:SimpleForm>
+
+<!-- <Panel headerText="Employee Information" >
 <l:Grid id="G1" vSpacing="1" width="100%">
     <l:content>
     <Label id="Emp" text="Employee Id">
@@ -21,36 +45,36 @@
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="ep">
+    <Text id="ep">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
     <Label id="E" text="Employee Name">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="Sk">
+    <Text id="Sk">
     <layoutData>
         <l:GridData id="G4" span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
     <Label id="E34" text="Employee Designation">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="EmpDEs">
+    <Text id="EmpDEs">
     <layoutData>
         <l:GridData id="0" span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
 
     <Label id="E0" text="Employee Skills">
     <layoutData>
@@ -58,41 +82,41 @@
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="Sk0">
+    <Text id="Sk0">
     <layoutData>
         <l:GridData id="G04" span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
     <Label id="E11" text="Email">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="Sk11">
+    <Text id="Sk11">
     <layoutData>
         <l:GridData id="G411" span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
     <Label id="E33" text="Phon No">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
      </layoutData>
     </Label>
-    <Input id="Sk3">
+    <Text id="Sk3">
     <layoutData>
         <l:GridData id="G43" span="L3 M3">
         </l:GridData>
      </layoutData>
-    </Input>
+    </Text>
     
     </l:content>
  
  </l:Grid>
-</Panel>
+</Panel> -->
  
 
 </content>

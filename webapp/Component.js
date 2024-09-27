@@ -5,15 +5,18 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "shubham/project1/model/models"
+        "shubham/project1/model/models",
+        "sap/ui/model/json/JSONModel",
+        
     ],
-    function (UIComponent, _Device, models) {
+    function (UIComponent, _Device, models,JSONmodel) {
         "use strict";
 
         return UIComponent.extend("shubham.project1.Component", {
             metadata: {
                 manifest: "json"
             },
+
 
             /**
              * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
@@ -23,6 +26,17 @@ sap.ui.define([
             init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
+                //Model Creation
+                var FModel = new JSONmodel({
+                    empId: "",
+                    empName: "",
+                    empSkills: "",
+                    empDesignation: "",
+                    Email: "",
+                    empphone: "",
+                     
+                });
+                this.setModel(FModel);
 
                 // enable routing
                 this.getRouter().initialize();

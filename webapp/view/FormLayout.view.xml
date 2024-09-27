@@ -51,16 +51,16 @@
                     <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
                     <f:content> 
 
-                    <Label text="Employee ID" required="true"></Label>
+                    <Label text="Employee ID"  ></Label>
                     <Input id="EmpID" maxLength="20"></Input>
                     
-                    <Label text="Employee Name" required="true"></Label>
+                    <Label text="Employee Name"  ></Label>
                     <Input id="emp2"></Input>
                     
-                    <Label text="Employee Skills" required="true"></Label>
+                    <Label text="Employee Skills"  ></Label>
                     <Input id="emp3" ></Input>
                      
-                    <Label text="Employee Designation" required="true"></Label>
+                    <Label text="Employee Designation"  ></Label>
                     <Input id="emp4" ></Input>
                     
                     <Label text="Email"></Label>
