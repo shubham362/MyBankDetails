@@ -29,7 +29,7 @@
                                 highlight="Information"
                                 infoStateInverted="true"
                                 description="{oBankDetails>cardtype}"
-                                infoState="Information"
+                                infoState="{oBankDetails>infoState}"
                             />
                             <!-- <StandardListItem
                                 id="card2"

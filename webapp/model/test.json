@@ -1,0 +1,22 @@
+{
+    "aRelations": [
+        {
+            "relation": "Mother"
+        },
+        {
+            "relation": "Father"
+        },
+        {
+            "relation": "Brother"
+        },
+        {
+            "relation": "Sister"
+        },
+        {
+            "relation": "Big Brother"
+        },
+        {
+            "relation": "None"
+        }
+    ]
+}

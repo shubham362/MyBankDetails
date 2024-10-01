@@ -13,26 +13,40 @@
 
 <content>
 
-<f:SimpleForm id="Sec" title="Employee Details" editable="false" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+<f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
                     <f:content> 
-
-                    <Label text="Employee ID" required="true"></Label>
-                    <Text id="idTxt" ></Text>
+                    <Label id="L1" text="Relationship"></Label>
+                    <Select id="LS" items="{Relationship>aRelations}">
+                        <core:Item id="oc" text="{relation}"></core:Item>
+                    </Select>
+                   <Label id="1" text="Languages"></Label>
+                    <MultiComboBox items="{/aLanguages}">
+                    <core:Item id="o" text="{languages}"></core:Item>
+                    </MultiComboBox>
+                    <Label id="L1u" text="Gender"></Label>
+                    <RadioButtonGroup Buttons="{/aGender}">
+                        <RadioButton text="{gender}"></RadioButton>
+                    </RadioButtonGroup>
+                    <Label text="Are you Married"></Label>
+                    <CheckBox id="ck" ></CheckBox>
+                    <Label text="Employee ID"  required="true"></Label>
+                    <Text id="idTxt" text="{/empId}" ></Text>
                     
                     <Label text="Employee Name" required="true"></Label>
-                    <Text id="Nametxt" text="{/empId}"></Text>
+                    <Text id="Nametxt" text="{/empName}"></Text>
                     
                     <Label text="Employee Skills" required="true"></Label>
-                    <Text id="Skillstxt" ></Text>
+                    <Text id="Skillstxt" text="{/empSkills}"></Text>
                      
                     <Label text="Employee Designation" required="true"></Label>
-                    <Text id="desctxt" ></Text>
+                    <Text id="desctxt" text="{/empdesc}" ></Text>
                     
                     <Label text="Email"></Label>
-                    <Text id="Emailtxt"></Text>
+                    <Text id="Emailtxt" text="{/Email}"></Text>
                     
                     <Label text="Phone No"></Label >
-                    <Text id="Phonetxt"></Text>
+                    <Text id="Phonetxt" text="{/phone}"></Text>
+                    <Button text="NaVTo" id="Nav" press="onSecondNav"></Button>
                     </f:content> 
                 </f:SimpleForm>
 

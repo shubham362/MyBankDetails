@@ -139,6 +139,13 @@
           "target": [
             "TargetThird"
           ]
+        },
+        {
+          "name": "RouteView5",
+          "pattern": "Binding",
+          "target": [
+            "TargetFourth"
+          ]
         }
       ],
       "targets": {
@@ -169,6 +176,13 @@
           "clearControlAggregation": false,
           "viewId": "v4",
           "viewName": "FormLayout"
+        },
+        "TargetFourth": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "v4",
+          "viewName": "Binding"
         }
       }
     },

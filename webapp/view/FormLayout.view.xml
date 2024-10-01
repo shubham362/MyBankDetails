@@ -11,7 +11,7 @@
 <Page id="form" title="Wasing Machine Information">
 
         <content>
-
+     
         <ObjectHeader id="" title="Washing Machine" number="3000" numberUnit="INR"  backgroundDesign="Solid" > 
             <attributes>
                 <ObjectAttribute title="Matrial Id" text="MAT003" id="1"></ObjectAttribute>
@@ -52,22 +52,22 @@
                     <f:content> 
 
                     <Label text="Employee ID"  ></Label>
-                    <Input id="EmpID" maxLength="20"></Input>
+                    <Input id="EmpID" value="{/empId}" maxLength="20"></Input>
                     
                     <Label text="Employee Name"  ></Label>
-                    <Input id="emp2"></Input>
+                    <Input id="emp2" value="{/empName}"></Input>
                     
                     <Label text="Employee Skills"  ></Label>
-                    <Input id="emp3" ></Input>
+                    <Input id="emp3" value="{/empSkills}"></Input>
                      
                     <Label text="Employee Designation"  ></Label>
-                    <Input id="emp4" ></Input>
+                    <Input id="emp4" value="{/empDesc}" ></Input>
                     
                     <Label text="Email"></Label>
-                    <Input id="emp5"></Input>
+                    <Input id="emp5" value="{/Email}"></Input>
                     
                     <Label text="Phone No"></Label >
-                    <Input id="emp6"></Input>
+                    <Input id="emp6" value="{/Phone}"></Input>
                     </f:content> 
                 </f:SimpleForm>
 </IconTabFilter>

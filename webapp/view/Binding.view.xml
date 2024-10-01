@@ -1,0 +1,44 @@
+<mvc:View xmlns:table="sap.ui.table"
+    xmlns:smartfilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="shubham.project1.controller.Binding"
+    displayBlock="true">
+<Page id="Bd">
+    <content>
+
+    <List items="{/aEmployees}" headerText="Employee List">
+        <ObjectListItem title="{empname}" number="{empid}" numberUnit="{empdesignation}">
+            <attributes>
+                <ObjectAttribute title="empSkills" text="{EempSkillsmail}"></ObjectAttribute>
+                <ObjectAttribute title="Email" text="{Email}"></ObjectAttribute>
+            </attributes>
+            <firstStatus text="{emploc}"></firstStatus>
+        </ObjectListItem>
+    </List>
+    <!-- <f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+    <f:content>
+    <Label id="io" text="Relationship"></Label>
+        <Select id="Se" items="{/aRelationship}">
+        <core:Item text="{relationship}"></core:Item>
+        </Select>
+
+         <Label id="1" text="Languages"></Label>
+                    <MultiComboBox items="{/aLanguages}">
+                    <core:Item id="o" text="Marathi"></core:Item>
+                    </MultiComboBox>
+                    <Label id="L1u" text="Gender"></Label>
+                    <RadioButtonGroup Buttons="{/aGender}">
+                        <RadioButton text="{gender}"></RadioButton>
+                    </RadioButtonGroup>
+                    <Label text="Are you Married"></Label>
+                    <CheckBox id="ck" ></CheckBox>
+    
+</f:content>
+</f:SimpleForm> -->
+</content>
+</Page>
+</mvc:View>

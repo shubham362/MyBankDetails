@@ -10,23 +10,23 @@ sap.ui.define([
 
         Bsumbit: function () {
 
-            
+           
+            this.getOwnerComponent().getRouter().navTo("RouteView3"); 
 
-            var empId = this.getView().byId("EmpID").getValue();
-            var empName = this.getView().byId("emp2").getValue();
-            var empSkills = this.getView().byId("emp3").getValue();
-            var empDesignation = this.getView().byId("emp4").getValue();
-            var Email = this.getView().byId("emp5").getValue();
-            var empphone = this.getView().byId("emp6").getValue();
+            // var empId = this.getView().byId("EmpID").getValue();
+            // var empName = this.getView().byId("emp2").getValue();
+            // var empSkills = this.getView().byId("emp3").getValue();
+            // var empDesignation = this.getView().byId("emp4").getValue();
+            // var Email = this.getView().byId("emp5").getValue();
+            // var empphone = this.getView().byId("emp6").getValue();
 
-            this.getOwnerComponent().getModel().setProperty("/empId", empId);
-            this.getOwnerComponent().getModel().setProperty("/empName", empName);
-            this.getOwnerComponent().getModel().setProperty("/empSkills",empSkills);
-            this.getOwnerComponent().getModel().setProperty("/empDesignation",empDesignation);
-            this.getOwnerComponent().getModel().setProperty("/Email", Email);
-            this.getOwnerComponent().getModel().setProperty("/empphone", empphone);
+            // this.getOwnerComponent().getModel().setProperty("/empId", empId);
+            // this.getOwnerComponent().getModel().setProperty("/empName", empName);
+            // this.getOwnerComponent().getModel().setProperty("/empSkills",empSkills);
+            // this.getOwnerComponent().getModel().setProperty("/empDesignation",empDesignation);
+            // this.getOwnerComponent().getModel().setProperty("/Email", Email);
+            // this.getOwnerComponent().getModel().setProperty("/empphone", empphone);
             
-            this.getOwnerComponent().getRouter().navTo("RouteView3");
 
 
 

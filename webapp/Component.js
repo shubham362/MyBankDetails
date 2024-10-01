@@ -3,13 +3,13 @@
  */
 
 sap.ui.define([
-        "sap/ui/core/UIComponent",
-        "sap/ui/Device",
-        "shubham/project1/model/models",
-        "sap/ui/model/json/JSONModel",
-        
-    ],
-    function (UIComponent, _Device, models,JSONmodel) {
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "shubham/project1/model/models",
+    "sap/ui/model/json/JSONModel",
+
+],
+    function (UIComponent, _Device, models, _JSONModel) {
         "use strict";
 
         return UIComponent.extend("shubham.project1.Component", {
@@ -27,20 +27,13 @@ sap.ui.define([
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
                 //Model Creation
-                var FModel = new JSONmodel({
-                    empId: "",
-                    empName: "",
-                    empSkills: "",
-                    empDesignation: "",
-                    Email: "",
-                    empphone: "",
-                     
-                });
-                this.setModel(FModel);
-
+                var oModel = new sap.ui.model.json.JSONModel("model/Empmodel");
+                this.setModel(oModel);
+                // var FModel = sap.i.model.json.JSONModel("localService/metadata")
+                // this.setModel(FModel);
                 // enable routing
                 this.getRouter().initialize();
-                 
+
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");

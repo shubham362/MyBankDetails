@@ -1,14 +1,55 @@
-sap.ui.define([
-    'sap/ui/core/mvc/Controller',
-      
-], function(Controller ) {
-    'use strict';
-    
-    return Controller.extend("shubham.project1.controller.Sample", {
-        onInit: function() {
-
-            var odata = {
-                "aEmployees":[
+{
+    "empId": "",
+    "empName": "",
+    "empSkills": "",
+    "empDesignation": "",
+    "Email": "",
+    "empphone": "",
+    "aRelations": [ {
+            "relation": "Mother"
+        },
+        {
+            "relation": "Father"
+        },
+        {
+            "relation": "Brother"
+        },
+        {
+            "relation": "Sister"
+        },
+        {
+            "relation": "Big Brother"
+        },
+        {
+            "relation": "None"
+        }
+    ],
+    "aLanguages":[
+    {
+        "language":"Marathi"
+    },
+    {
+        "language":"Hindi"
+    },  
+    {
+        "language":"English"
+    },
+    {
+        "language":"Gujrati"
+    },
+    {
+        "language":"Tamil"
+    }
+    ],
+    "aGender":[
+        {
+            "gender":"Male"
+        },
+        {
+            "gender" :"Female"
+        }
+    ],
+    "aEmployees":[
         {
         "empid":"10001",
         "empName":"Shubham Kshirsagar",
@@ -66,18 +107,4 @@ sap.ui.define([
 
 ]
 
-
-            }
-            let oModel = new sap.ui.model.json.JSONModel();
-                oModel.setData(odata);
-                this.getView().setModel(oModel, "Employee");
-            
-        }, 
-        login: function () {
-            this.getOwnerComponent().getRouter().navTo("RouteView4");
-            
-             
-        }
-            
-      });
-});
+}

@@ -30,13 +30,15 @@ sap.ui.define([
                             "cardnumber": "0000000000001",
                             "cardcompany": "Visa card",
                             "assignmentdate": "assigned on 23 Aug 2017",
-                            "state": true
+                            "state": true,
+                            "infoState":"Warning"
                         },
                         {
                             "cardtype": "credit card",
                             "cardnumber": "0000000000003",
                             "cardcompany": "master card",
                             "assignmentdate": "assigned on 20 Oct 2020",
+                            "infoState":"Success",
                             "state": false
                         },
                         {
@@ -44,6 +46,14 @@ sap.ui.define([
                             "cardnumber": "0000000000002",
                             "cardcompany": "master card",
                             "assignmentdate": "assigned on 23 Aug 2017",
+                            "infoState":"Error",
+                            "state": true
+                        },{
+                            "cardtype": "debit card",
+                            "cardnumber": "0000000000002",
+                            "cardcompany": "master card",
+                            "assignmentdate": "assigned on 23 Aug 2017",
+                            "infoState":"Error",
                             "state": true
                         }
                     ]
