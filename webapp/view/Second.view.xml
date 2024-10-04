@@ -26,13 +26,13 @@
                     <Text id="Skillstxt" text="{/empSkills}"></Text>
                      
                     <Label text="Employee Designation" id="ccc" required="true"></Label>
-                    <Text id="desctxt" text="{/empdesc}" ></Text>
+                    <Text id="desctxt" text="{/empDesignation}" ></Text>
                     
                     <Label text="Email" id="mmm" ></Label>
                     <Text id="Emailtxt" text="{/Email}"></Text>
                     
                     <Label text="Phone No" id="lk"></Label >
-                    <Text id="Phonetxt" text="{/phone}"></Text>
+                    <Text id="Phonetxt" text="{/empphone}"></Text>
                     <Button text="NaVTo" id="Nav" press="onSecondNav"></Button>
                     </f:content> 
                 </f:SimpleForm>

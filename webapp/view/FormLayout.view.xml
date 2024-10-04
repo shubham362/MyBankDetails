@@ -61,13 +61,13 @@
                     <Input id="emp3" value="{/empSkills}"></Input>
                      
                     <Label text="Employee Designation"  ></Label>
-                    <Input id="emp4" value="{/empDesc}" ></Input>
+                    <Input id="emp4" value="{/empDesignation}" ></Input>
                     
                     <Label text="Email"></Label>
                     <Input id="emp5" value="{/Email}"></Input>
                     
                     <Label text="Phone No"></Label >
-                    <Input id="emp6" value="{/Phone}"></Input>
+                    <Input id="emp6" value="{/empphone}"></Input>
                     </f:content> 
                 </f:SimpleForm>
 </IconTabFilter>
