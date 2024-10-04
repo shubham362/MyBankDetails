@@ -15,36 +15,23 @@
 
 <f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
                     <f:content> 
-                    <Label id="L1" text="Relationship"></Label>
-                    <Select id="LS" items="{Relationship>aRelations}">
-                        <core:Item id="oc" text="{relation}"></core:Item>
-                    </Select>
-                   <Label id="1" text="Languages"></Label>
-                    <MultiComboBox items="{/aLanguages}">
-                    <core:Item id="o" text="{languages}"></core:Item>
-                    </MultiComboBox>
-                    <Label id="L1u" text="Gender"></Label>
-                    <RadioButtonGroup Buttons="{/aGender}">
-                        <RadioButton text="{gender}"></RadioButton>
-                    </RadioButtonGroup>
-                    <Label text="Are you Married"></Label>
-                    <CheckBox id="ck" ></CheckBox>
-                    <Label text="Employee ID"  required="true"></Label>
+                   
+                    <Label text="Employee ID" id="Lpl" required="true"></Label>
                     <Text id="idTxt" text="{/empId}" ></Text>
                     
-                    <Label text="Employee Name" required="true"></Label>
+                    <Label text="Employee Name" id="wx" required="true"></Label>
                     <Text id="Nametxt" text="{/empName}"></Text>
                     
-                    <Label text="Employee Skills" required="true"></Label>
+                    <Label text="Employee Skills" id="kkk" required="true"></Label>
                     <Text id="Skillstxt" text="{/empSkills}"></Text>
                      
-                    <Label text="Employee Designation" required="true"></Label>
+                    <Label text="Employee Designation" id="ccc" required="true"></Label>
                     <Text id="desctxt" text="{/empdesc}" ></Text>
                     
-                    <Label text="Email"></Label>
+                    <Label text="Email" id="mmm" ></Label>
                     <Text id="Emailtxt" text="{/Email}"></Text>
                     
-                    <Label text="Phone No"></Label >
+                    <Label text="Phone No" id="lk"></Label >
                     <Text id="Phonetxt" text="{/phone}"></Text>
                     <Button text="NaVTo" id="Nav" press="onSecondNav"></Button>
                     </f:content> 
@@ -135,7 +122,7 @@
 
 </content>
 <footer>
-    <Bar >
+    <Bar>
     <contentRight>
         <Button id="close" text="Sumbit" press="onSumbit" type="Emphasized"></Button>
     </contentRight>

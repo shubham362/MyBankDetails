@@ -28,7 +28,7 @@ sap.ui.define([
             // this.getOwnerComponent().getModel().setProperty("/empphone", empphone);
             
 
-
+            //validation For inputbo
 
             // // this code is for emplyee Id
             // if (empId === "") {

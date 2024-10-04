@@ -12,7 +12,7 @@ sap.ui.define([
 
 
 
-            //this.getOwnerComponent().getRouter("RouteView3").attachedParameterMatched(this.onPattenMatched, this);
+          //  this.getOwnerComponent().getRouter("RouteView3").attachedParameterMatched(this.onPattenMatched, this);
         },
         onBeforeRendering: function () {
              

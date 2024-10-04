@@ -10,7 +10,7 @@
     displayBlock="true"
 >
     <Page
-        id="page"
+        id="pagwe"
         title="{i18>appTitle}"
     >
         <headerContent>

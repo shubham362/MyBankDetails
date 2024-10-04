@@ -12,7 +12,7 @@
 
         <content>
      
-        <ObjectHeader id="" title="Washing Machine" number="3000" numberUnit="INR"  backgroundDesign="Solid" > 
+        <ObjectHeader id="h" title="Washing Machine" number="3000" numberUnit="INR"  backgroundDesign="Solid" > 
             <attributes>
                 <ObjectAttribute title="Matrial Id" text="MAT003" id="1"></ObjectAttribute>
                 <ObjectAttribute title="Material Description" id="01" text="Fully Automatic" ></ObjectAttribute>

@@ -18,7 +18,7 @@
                     <!-- <Title text="{i18n>accDetails}" id="accDetails" level="H1"/> -->
 
                     <HBox id="hBox">
-                        <Label id="lblacnu" text="{i18n>Account Number}" class="sapUiSmallMarginEnd"/>
+                        <Label id="llacnu" text="{i18n>Account Number}" class="sapUiSmallMarginEnd"/>
                         <Text id="accountNu" text= "{/accountdetails/accountnum}"/>
                     </HBox>
 
