@@ -27,8 +27,8 @@ sap.ui.define([
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
                 //Model Creation
-                var oModel = new sap.ui.model.json.JSONModel("model/Empmodel");
-                this.setModel(oModel);
+                // var oModel = new sap.ui.model.json.JSONModel("model/Empmodel");
+                // this.setModel(oModel);
                 // var FModel = sap.i.model.json.JSONModel("localService/metadata")
                 // this.setModel(FModel);
                 // enable routing

@@ -4,13 +4,28 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
-    controllerName="shubham.project1.controller.Binding"
-    displayBlock="true">
-<Page id="Bd">
-    <content>
+    xmlns:f="sap.ui.layout.form" controllerName="shubham.project1.controller.Binding" displayBlock="true">
+    <Page id="Bd">
+        <content>
 
-    <List items="{/aEmployees}" headerText="Employee List">
+            <List id="LstProd" items="{/Products}" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
+                <headerToolbar>
+                    <Toolbar id="toolbar" >
+                        <Text text="Products" id="ok"></Text>
+                        <ToolbarSpacer id="tool"></ToolbarSpacer>
+                        <SearchField id="search" width="30%" liveChange="onSearch"></SearchField>
+                    </Toolbar>
+                </headerToolbar>
+                <ObjectListItem id="obj" title="{Name}" number="{ID}" numberUnit="{/Supplier>Concurrency}">
+                    <attributes>
+                        <ObjectAttribute id="objllist" title="Product Id" text="{ID}"></ObjectAttribute>
+                        <ObjectAttribute id="objllist1" title="Description" text="{Description}"></ObjectAttribute>
+                    </attributes>
+                    <firstStatus ></firstStatus>
+                </ObjectListItem>
+            </List>
+
+            <!-- <List items="{/aEmployees}" headerText="Employee List">
         <ObjectListItem title="{empname}" number="{empid}" numberUnit="{empdesignation}">
             <attributes>
                 <ObjectAttribute title="empSkills" text="{EempSkillsmail}"></ObjectAttribute>
@@ -18,27 +33,34 @@
             </attributes>
             <firstStatus text="{emploc}"></firstStatus>
         </ObjectListItem>
-    </List>
-    <!-- <f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+    </List> -->
+            <!-- <f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
     <f:content>
     <Label id="io" text="Relationship"></Label>
-        <Select id="Se" items="{/aRelationship}">
-        <core:Item text="{relationship}"></core:Item>
+        <Select id="Se" items="{/Products}" change="onSelectChange">
+        <core:Item text="{ID}"></core:Item>
         </Select>
-
-         <Label id="1" text="Languages"></Label>
-                    <MultiComboBox items="{/aLanguages}">
-                    <core:Item id="o" text="Marathi"></core:Item>
-                    </MultiComboBox>
-                    <Label id="L1u" text="Gender"></Label>
-                    <RadioButtonGroup Buttons="{/aGender}">
-                        <RadioButton text="{gender}"></RadioButton>
-                    </RadioButtonGroup>
-                    <Label text="Are you Married"></Label>
-                    <CheckBox id="ck" ></CheckBox>
+        
+    <Label id="i" text="Product Name"></Label>
+    <ComboBox items="{/Products}">
+        <core:Item text="{Name}"></core:Item>
+    </ComboBox>
+        
+     <Label id="1" text="Description"></Label>
+         <MultiComboBox items="{/Products}" selectionFinish="onChange">
+                 <core:Item id="o" text="{Description}"></core:Item>
+        </MultiComboBox>
+        <Label id="gen" text="Select you Price"></Label>
+        <RadioButtonGroup id="Raido" columns="2" buttons="{/Products}">
+            <RadioButton id="btn" text="{Price}"></RadioButton>
+        </RadioButtonGroup>
+                
+                   
+             <Label text="Are you Married"></Label>
+                 <CheckBox id="ck"></CheckBox>
     
 </f:content>
 </f:SimpleForm> -->
-</content>
-</Page>
+        </content>
+    </Page>
 </mvc:View>

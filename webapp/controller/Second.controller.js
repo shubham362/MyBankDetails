@@ -7,12 +7,12 @@ sap.ui.define([
         onInit: function () {
 
 
-            var oRouter = this.getOwnerComponent().getRouter();
-            oRouter.getRoute("RouteView3").attachMatched(this._onRouteMatched, this);
+             var oRouter = this.getOwnerComponent().getRouter();
+             oRouter.getRoute("RouteView3").attachMatched(this.onPattenMatched, this);
 
 
 
-          //  this.getOwnerComponent().getRouter("RouteView3").attachedParameterMatched(this.onPattenMatched, this);
+           // this.getOwnerComponent().getRouter().getRoute("RouteView3").attachedParameterMatched(this.onPattenMatched, this);
         },
         onBeforeRendering: function () {
              
@@ -21,13 +21,20 @@ sap.ui.define([
         }
 ,
         onSumbit: function () {
-            //this.getOwnerComponent().getRouter().navTo("RouteView4");
+            this.getOwnerComponent().getRouter().navTo("RouteView4");
         },
         onSecondNav: function () {
             this.getOwnerComponent().getRouter().navTo("RouteView5");
         },
 
+        onPattenMatched: function (oEvent) {
+            // var index = oEvent.getParameter().Index;
+            // this.getView().bindElement("/Products(1)");
 
+            var primearyKey = oEvent.getParameter('arguments').prdid;
+           var check = this.getView().bindElement("/Products("+ primearyKey  +")");
+            console.log(check);
+        },
 
         // _onRouteMatched: function () {
         //     var empid = this.getOwnerComponent().getModel().getProperty("/empId");

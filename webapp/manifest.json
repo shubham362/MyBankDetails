@@ -128,7 +128,7 @@
         },
         {
           "name": "RouteView3",
-          "pattern": "secondview",
+          "pattern": "secondview/{prdid}",
           "target": [
             "TargetSecond"
           ]

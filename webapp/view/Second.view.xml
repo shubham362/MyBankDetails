@@ -9,38 +9,102 @@
     displayBlock="true">
 
 
-<Page title="I am in Grid" id="P3">
+<Page title="Product List" id="P3">
 
 <content>
 
-<f:SimpleForm id="Sec" title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+<ObjectHeader title="{Name}" number="{ID}" numberUnit="{Rating}" backgroundDesign="Solid" > 
+            <attributes>
+                <ObjectAttribute title="Product Id" text="{ID}" id="1"></ObjectAttribute>
+                <ObjectAttribute title="Product Description" id="01" text="{Description}" ></ObjectAttribute>
+            </attributes>
+            <statuses>
+                <ObjectStatus id="09" text="{Rating}"></ObjectStatus>
+            </statuses>
+        </ObjectHeader>
+<!-- 
+<f:SimpleForm id="Sec"  title="Product Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
                     <f:content> 
                    
-                    <Label text="Employee ID" id="Lpl" required="true"></Label>
-                    <Text id="idTxt" text="{/empId}" ></Text>
+                    <Label text="Product ID" id="Lpl" required="true"></Label>
+                    <Text id="idTxt" text="{ID}" ></Text>
                     
-                    <Label text="Employee Name" id="wx" required="true"></Label>
-                    <Text id="Nametxt" text="{/empName}"></Text>
+                    <Label text="Product Name" id="wx" required="true"></Label>
+                    <Text id="Nametxt" text="{Name}"></Text>
                     
-                    <Label text="Employee Skills" id="kkk" required="true"></Label>
-                    <Text id="Skillstxt" text="{/empSkills}"></Text>
+                    <Label text="Product Skills" id="kkk" required="true"></Label>
+                    <Text id="Skillstxt" text="{Description}"></Text>
                      
-                    <Label text="Employee Designation" id="ccc" required="true"></Label>
-                    <Text id="desctxt" text="{/empDesignation}" ></Text>
+                    <Label text="Product Designation" id="ccc" required="true"></Label>
+                    <Text id="desctxt" text="{Description}" ></Text>
                     
-                    <Label text="Email" id="mmm" ></Label>
-                    <Text id="Emailtxt" text="{/Email}"></Text>
+                    <Label text="Price" id="mmm" ></Label>
+                    <Text id="Emailtxt" text="{Price}"></Text>
+                    
+                    <Label text="Phone No" id="lk"></Label >
+                    <Text id="Phonetxt" text="{/empphone}"></Text>
+                    <Button text="NaVTo" id="Nav" press="onSecondNav"></Button>
+                    </f:content> 
+                </f:SimpleForm> -->
+
+
+ <IconTabBar id="Tol">
+                <items>
+                    <IconTabFilter icon="sap-icon://dimension">
+                    <f:SimpleForm title="Product Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
+                    <f:content> 
+                    <Label text="Product ID" id="Lpl" required="true"></Label>
+                    <Text id="idTxt" text="{ID}" ></Text>
+                    
+                    <Label text="Product Name" id="wx" required="true"></Label>
+                    <Text id="Nametxt" text="{Name}"></Text>
+                    
+                    <Label text="Product Skills" id="kkk" required="true"></Label>
+                    <Text id="Skillstxt" text="{Description}"></Text>
+                     
+                    <Label text="Product Designation" id="ccc" required="true"></Label>
+                    <Text id="desctxt" text="{Description}" ></Text>
+                    
+                    <Label text="Price" id="mmm" ></Label>
+                    <Text id="Emailtxt" text="{Price}"></Text>
                     
                     <Label text="Phone No" id="lk"></Label >
                     <Text id="Phonetxt" text="{/empphone}"></Text>
                     <Button text="NaVTo" id="Nav" press="onSecondNav"></Button>
                     </f:content> 
                 </f:SimpleForm>
+</IconTabFilter>
+                    <IconTabFilter icon="sap-icon://notes">
+                    <f:SimpleForm title="Product Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+                    <f:content> 
 
-<!-- <Panel headerText="Employee Information" >
+                    <Label text="Product ID"  ></Label>
+                    <Input id="EmpID" value="{/empId}" maxLength="20"></Input>
+                    
+                    <Label text="Product Name"  ></Label>
+                    <Input id="emp2" value="{/empName}"></Input>
+                    
+                    <Label text="Product Skills"  ></Label>
+                    <Input id="emp3" value="{/empSkills}"></Input>
+                     
+                    <Label text="Product Designation"  ></Label>
+                    <Input id="emp4" value="{/empDesignation}" ></Input>
+                    
+                    <Label text="Email"></Label>
+                    <Input id="emp5" value="{/Email}"></Input>
+                    
+                    <Label text="Phone No"></Label >
+                    <Input id="emp6" value="{/empphone}"></Input>
+                    </f:content> 
+                </f:SimpleForm>
+</IconTabFilter>
+                </items>
+            </IconTabBar>
+
+<!-- <Panel headerText="Product Information" >
 <l:Grid id="G1" vSpacing="1" width="100%">
     <l:content>
-    <Label id="Emp" text="Employee Id">
+    <Label id="Emp" text="Product Id">
     <layoutData>
         <l:GridData span="L3 M3">
         </l:GridData>
@@ -52,7 +116,7 @@
         </l:GridData>
      </layoutData>
     </Text>
-    <Label id="E" text="Employee Name">
+    <Label id="E" text="Product Name">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
@@ -64,7 +128,7 @@
         </l:GridData>
      </layoutData>
     </Text>
-    <Label id="E34" text="Employee Designation">
+    <Label id="E34" text="Product Designation">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
@@ -77,7 +141,7 @@
      </layoutData>
     </Text>
 
-    <Label id="E0" text="Employee Skills">
+    <Label id="E0" text="Product Skills">
     <layoutData>
         <l:GridData  span="L3 M3">
         </l:GridData>
