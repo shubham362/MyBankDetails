@@ -188,7 +188,8 @@
 <footer>
     <Bar>
     <contentRight>
-        <Button id="close" text="Sumbit" press="onSumbit" type="Emphasized"></Button>
+        <Button id="idDelete" text="Delete" press="onDelete" icon="sap-icon://delete" type="Emphasized"></Button>
+        <Button id="idEdit" text="Edit" press="onEdit" icon="sap-ion://edit" type="Emphasized"></Button>
     </contentRight>
     </Bar>
 </footer>

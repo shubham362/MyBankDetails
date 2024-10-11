@@ -9,7 +9,7 @@ sap.ui.define([
 
         },
         login: function () {
-            this.getOwnerComponent().getRouter().navTo("RouteView4");
+        //    this.getOwnerComponent().getRouter().navTo("RouteView4");
 
 
         }

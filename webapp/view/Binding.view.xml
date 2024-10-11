@@ -62,5 +62,19 @@
 </f:content>
 </f:SimpleForm> -->
         </content>
+        <!-- <footer>
+        <bar>
+            <contentRight>
+                  <Button id="idCreate" text="Create" press="Bsumbit" type="Emphasized" icon="sap-icon://add"></Button>
+            </contentRight>
+        </bar>
+        </footer> -->
+            <footer>
+    <Bar>
+    <contentRight>
+          <Button id="idCreate" text="Create" press="onCreate" type="Emphasized" icon="sap-icon://add"></Button>
+    </contentRight>
+    </Bar>
+</footer>
     </Page>
 </mvc:View>

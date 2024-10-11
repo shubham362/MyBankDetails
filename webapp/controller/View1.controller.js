@@ -69,7 +69,7 @@ sap.ui.define([
             },
 
             tap: function () {
-                this.getOwnerComponent().getRouter().navTo("RouteView2");
+                this.getOwnerComponent().getRouter().navTo("RouteView5");
             },
 
             onOpenBankDetails: function () {

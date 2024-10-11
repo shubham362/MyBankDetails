@@ -21,10 +21,14 @@ sap.ui.define([
         }
 ,
         onSumbit: function () {
-            this.getOwnerComponent().getRouter().navTo("RouteView4");
+           // this.getOwnerComponent().getRouter().navTo("RouteView");
         },
         onSecondNav: function () {
-            this.getOwnerComponent().getRouter().navTo("RouteView5");
+       //     this.getOwnerComponent().getRouter().navTo("RouteView5");
+        },
+        onEdit: function () {
+            this.getOwnerComponent().getRouter().navTo("RouteView6");
+            
         },
 
         onPattenMatched: function (oEvent) {
@@ -32,8 +36,8 @@ sap.ui.define([
             // this.getView().bindElement("/Products(1)");
 
             var primearyKey = oEvent.getParameter('arguments').prdid;
-           var check = this.getView().bindElement("/Products("+ primearyKey  +")");
-            console.log(check);
+             this.getView().bindElement("/Products("+ primearyKey  +")");
+           // console.log(check);
         },
 
         // _onRouteMatched: function () {
