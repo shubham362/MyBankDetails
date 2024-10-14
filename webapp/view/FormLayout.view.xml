@@ -5,9 +5,10 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form" controllerName="shubham.project1.controller.FormLayout" displayBlock="true">
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="shubham.project1.controller.FormLayout" displayBlock="true">
 
-    <Page id="form" title="Wasing Machine Information">
+    <Page id="form" title="Wasing Machine Information" showNavButton="true" navButtonPress="onNavBack">
 
         <content>
 
@@ -79,7 +80,7 @@
             <Bar >
                 <contentRight>
                     <Button id="onSave" text="Save" press="onSave" type="Emphasized" icon="sap-icon://save"></Button>
-                    <Button id="onCancel" text="Cancel" press="onCancel" type="Emphasized" icon="sap-icon://cancel"></Button>
+                    <Button id="onCancel" text="Back" press="onBack" type="Emphasized" icon="sap-icon://back"></Button>
                 </contentRight>
             </Bar>
         </footer>

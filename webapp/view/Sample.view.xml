@@ -2,32 +2,59 @@
     xmlns:smartfilterBar="sap.ui.comp.smartfilterbar"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
-    xmlns="sap.m"
-    controllerName="shubham.project1.controller.Sample"
-    displayBlock="true"
->
-<Page id="SecondPage" title="I am In second view" class="mybackgroundcolor" > 
-    <content>
-    <FlexBox justifyContent="Center" alignItems="Center" height="100%">
- <VBox >
- <HBox >
-    <Label text="Login" design="Bold" class="sapUiSmallMarginTop"></Label>
- </HBox>
-  
- <Label text="UserName" class="sapUiSmallMarginTop mytextcolor mytextfont" design="Bold"></Label>
- <Input width="400px"></Input> 
- <Label text="Password" design="Bold" class="sapUiSmallMarginTop mytextcolor mytextfont"></Label>
- <Input width="400px" type="Password"></Input> 
- <Button text="Login" width="400px" type="Emphasized"  press="login"></Button>
- </VBox>
-                             
- </FlexBox> 
-    </content>    
-    
-    <footer>
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m" controllerName="shubham.project1.controller.Sample" displayBlock="true">
+    <Page id="SecondPage" title="Edit Product Details" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <f:SimpleForm title="Products Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
+                <f:content>
+                    <core:Title text="Basic Information"></core:Title>
+                    <Label text="Products ID" ></Label>
+                    <Input id="ProductId_" width="50%" value="{ID}"></Input>
 
-     
-    </footer>
-    
-</Page>
+                    <Label text="Products Name"></Label>
+                    <Input id="ProductName_" width="50%" value="{Name}"></Input>
+
+                    <!-- <Label text="Products Skills"></Label>
+                    <Input id="Product_" width="50%" value="{ID}"></Input> -->
+                    <!-- // <core:Title text="Basic Contact"></core:Title> -->
+                    <Label text="Products Designation"></Label>
+                    <Input id="ProdDes_" width="50%" value="{Description}"></Input>
+
+                    <Label text="Price"></Label>
+                    <Input id="Price_" width="50%" value="{Price}"></Input>
+
+                    <Label text="Rating"></Label >
+                    <Input id="Rating_" width="50%" value="{Rating}"></Input>
+                </f:content>
+            </f:SimpleForm>
+            <!-- <FlexBox justifyContent="Center" alignItems="Center" height="100%">
+                <VBox >
+                    <HBox >
+                        <Label text="Login" design="Bold" class="sapUiSmallMarginTop"></Label>
+                    </HBox>
+
+                    <Label text="UserName" class="sapUiSmallMarginTop mytextcolor mytextfont" design="Bold"></Label>
+                    <Input width="400px"></Input>
+                    <Label text="Password" design="Bold" class="sapUiSmallMarginTop mytextcolor mytextfont"></Label>
+                    <Input width="400px" type="Password"></Input>
+                    <Button text="Login" width="400px" type="Emphasized" press="login"></Button>
+                </VBox>
+
+            </FlexBox> -->
+        </content>
+
+        <footer>
+            <Bar >
+                <contentRight>
+                    <Button id="onUpdate" text="Update" press="onUpdate" type="Emphasized" icon="sap-icon://update"></Button>
+                    <Button id="onBack" text="Back" press="onBack" type="Emphasized" icon="sap-icon://delete"></Button>
+                </contentRight>
+            </Bar>
+
+
+        </footer>
+
+    </Page>
 </mvc:View>

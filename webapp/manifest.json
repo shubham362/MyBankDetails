@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(ogrwtkmoyynadgkdv01dzi2q))/OData/OData.svc/",
+        "uri": "/V2/(S(uustrqjqlkhywkh4q1afessl))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -124,7 +124,7 @@
         },
         {
           "name": "RouteView2",
-          "pattern": "sampleview",
+          "pattern": "sampleview/{prdid}",
           "target": [
             "TargetSample"
           ]

@@ -15,7 +15,17 @@ sap.ui.define([
 
 
         },
-
+        onNavBack: function () {
+            var oNavContainer = this.getView().getParent();
+            oNavContainer.back();
+            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+        } ,
+        onBack: function () {
+        
+            var oNavContainer = this.getView().getParent();
+            oNavContainer.back();
+            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+        },
         onSave: function () {
             var payload = {
                 // "ID": 0,
@@ -35,11 +45,12 @@ sap.ui.define([
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
             oModel.create("/Products", payload, {
-                success: function (res) {
-                    res.ID;
+                success: function ( ) {
+                   
                     MessageBox.show("New Product has beeen Sucessfully Create", MessageBox.Icon.success, "Product Created");
                     this.onCancel();
-                },
+                     
+                }.bind(this),
                 error: function () {
                     MessageBox.show("Sonme Error is comming check Intrenet Connectivity", MessageBox.Icon.success, "Oops");
                     this.onCancel();

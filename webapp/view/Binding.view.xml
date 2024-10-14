@@ -5,12 +5,14 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form" controllerName="shubham.project1.controller.Binding" displayBlock="true">
-    <Page id="Bd">
+    <Page id="Bd" showNavButton="true" navButtonPress="onNavBack">
         <content>
 
             <List id="LstProd" items="{/Products}" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
                 <headerToolbar>
-                    <Toolbar id="toolbar" >
+                    <Toolbar id="toolbar">
+                               
+
                         <Text text="Products" id="ok"></Text>
                         <ToolbarSpacer id="tool"></ToolbarSpacer>
                         <SearchField id="search" width="30%" liveChange="onSearch"></SearchField>
@@ -21,7 +23,16 @@
                         <ObjectAttribute id="objllist" title="Product Id" text="{ID}"></ObjectAttribute>
                         <ObjectAttribute id="objllist1" title="Description" text="{Description}"></ObjectAttribute>
                     </attributes>
-                    <firstStatus ></firstStatus>
+                    	 
+               <firstStatus>
+				<ObjectStatus id="st"
+					text="Available"
+					state="Success" />
+			</firstStatus>
+            <markers>
+				<ObjectMarker id="oo" type="Favorite" />
+				<ObjectMarker id="kk" type="Flagged" />
+			</markers>
                 </ObjectListItem>
             </List>
 
@@ -69,12 +80,12 @@
             </contentRight>
         </bar>
         </footer> -->
-            <footer>
-    <Bar>
-    <contentRight>
-          <Button id="idCreate" text="Create" press="onCreate" type="Emphasized" icon="sap-icon://add"></Button>
-    </contentRight>
-    </Bar>
-</footer>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button id="idCreate" text="Create" press="onCreate" type="Emphasized" icon="sap-icon://add"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>
