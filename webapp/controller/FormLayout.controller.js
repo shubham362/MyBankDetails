@@ -1,17 +1,77 @@
 sap.ui.define([
-    'sap/ui/core/mvc/Controller'
-], function (Controller) {
+    'sap/ui/core/mvc/Controller',
+    'sap/m/MessageBox',
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    "sap/ui/model/odata/v2/ODataModel",
+    "sap/ui/model/Sorter"
+], function (Controller, MessageBox) {
     'use strict';
 
     return Controller.extend("shubham.project1.controller.FormLayout", {
         onInit: function () {
 
+
+
+
+        },
+        onNavBack: function () {
+            var oNavContainer = this.getView().getParent();
+            oNavContainer.back();
+            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+        } ,
+        onBack: function () {
+        
+            var oNavContainer = this.getView().getParent();
+            oNavContainer.back();
+            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+        },
+        onSave: function () {
+            var payload = {
+                // "ID": 0,
+                // "Name": "Bread",
+                // "Description": "Whole grain bread",
+                // "ReleaseDate": "/Date(694224000000)/",
+                // "DiscontinuedDate": null,
+                // "Rating": 4,
+                // "Price": "2.5"
+
+                ID: this.getView().byId("ProductId").getValue(),
+                Name: this.getView().byId("ProductName").getValue(),
+                Description: this.getView().byId("ProdDes").getValue(),
+                Price: this.getView().byId("Price").getValue(),
+                Rating: this.getView().byId("Rating").getValue()
+            };
+            console.log(payload);
+            var oModel = this.getOwnerComponent().getModel();
+            oModel.create("/Products", payload, {
+                success: function ( ) {
+                   
+                    MessageBox.show("New Product has beeen Sucessfully Create", MessageBox.Icon.success, "Product Created");
+                    this.onCancel();
+                     
+                }.bind(this),
+                error: function () {
+                    MessageBox.show("Sonme Error is comming check Intrenet Connectivity", MessageBox.Icon.success, "Oops");
+                    this.onCancel();
+                }
+            })
+
+        },
+
+        onCancel:function () {
+                this.getView().byId("ProductId").setValue(" "),
+                this.getView().byId("ProductName").setValue(" "),
+                this.getView().byId("ProdDes").setValue(" "),
+                this.getView().byId("Price").setValue(" "),
+                this.getView().byId("Rating").setValue(" ")
         },
 
         Bsumbit: function () {
 
-           
-            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+
+
+            this.getOwnerComponent().getRouter().navTo("RouteView3");
 
             // var empId = this.getView().byId("EmpID").getValue();
             // var empName = this.getView().byId("emp2").getValue();
@@ -26,7 +86,7 @@ sap.ui.define([
             // this.getOwnerComponent().getModel().setProperty("/empDesignation",empDesignation);
             // this.getOwnerComponent().getModel().setProperty("/Email", Email);
             // this.getOwnerComponent().getModel().setProperty("/empphone", empphone);
-            
+
 
             //validation For inputbo
 

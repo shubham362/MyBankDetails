@@ -44,7 +44,7 @@ sap.ui.define([
             var sQueryUpper = sQuery.toUpperCase();
             if (sQuery && sQuery.length > 0) {
                 var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains, sQueryLower);
-                var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains,  sQueryUpper);
+                var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains, sQueryUpper);
                 //var oFilter = new Filter("Name", FilterOperator.Contains, value);
                 aFilter.push(oFilter);
             }
@@ -52,21 +52,24 @@ sap.ui.define([
 
 
         },
-        onSort: function () {
-            var oList = this.byId("LstProd"); // Replace with your list ID
-            var oBinding = oList.getBinding("items");
-
-            // Create a new sorter with the provided parameters
-            var oSorter = new sap.ui.model.Sorter("Name", false);
-
-            // Apply the sorter to the binding
-            oBinding.sort(oSorter);
-        },
         // onSort: function () {
-        //     var oSorter = new  sap.ui.model.Sorter("Name", false);
-        //     // var oSorter = new sap.ui.model.Sorter("Name", true);
-        //     this.getView().byId("LstProd").getBinding("items").filter(oSorter);
+        //     var oList = this.byId("LstProd"); // Replace with your list ID
+        //     var oBinding = oList.getBinding("items");
+
+        //     // Create a new sorter with the provided parameters
+        //     var oSorter = new sap.ui.model.Sorter("Name", false);
+
+        //     // Apply the sorter to the binding
+        //     oBinding.sort(oSorter);
         // },
+        onCreate: function () {
+            this.getOwnerComponent().getRouter().navTo("RouteView4");
+        },
+        onSort: function () {
+            var oSorter = new sap.ui.model.Sorter("Name", false);
+            // var oSorter = new sap.ui.model.Sorter("Name", true);
+            this.getView().byId("LstProd").getBinding("items").filter(oSorter);
+        },
 
         onChange: function (oEvent) {
 

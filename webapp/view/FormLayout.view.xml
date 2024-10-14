@@ -1,87 +1,88 @@
-<mvc:View xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table"
+<mvc:View xmlns:uxap="sap.uxap"
+    xmlns:table="sap.ui.table"
     xmlns:smartfilterBar="sap.ui.comp.smartfilterbar"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
-    controllerName="shubham.project1.controller.FormLayout"
-    displayBlock="true">
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="shubham.project1.controller.FormLayout" displayBlock="true">
 
-<Page id="form" title="Wasing Machine Information">
+    <Page id="form" title="Wasing Machine Information" showNavButton="true" navButtonPress="onNavBack">
 
         <content>
-     
-        <ObjectHeader id="h" title="Washing Machine" number="3000" numberUnit="INR"  backgroundDesign="Solid" > 
-            <attributes>
-                <ObjectAttribute title="Matrial Id" text="MAT003" id="1"></ObjectAttribute>
-                <ObjectAttribute title="Material Description" id="01" text="Fully Automatic" ></ObjectAttribute>
-            </attributes>
-            <statuses>
-                <ObjectStatus id="09" text="Approve"></ObjectStatus>
-            </statuses>
-        </ObjectHeader>
+
+            <ObjectHeader id="h" title="Washing Machine" number="3000" numberUnit="INR" backgroundDesign="Solid">
+                <attributes>
+                    <ObjectAttribute title="Matrial Id" text="MAT003" id="1"></ObjectAttribute>
+                    <ObjectAttribute title="Material Description" id="01" text="Fully Automatic"></ObjectAttribute>
+                </attributes>
+                <statuses>
+                    <ObjectStatus id="09" text="Approve"></ObjectStatus>
+                </statuses>
+            </ObjectHeader>
             <IconTabBar >
                 <items>
                     <IconTabFilter icon="sap-icon://dimension">
-                    <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
-                    <f:content> 
-                    <core:Title text="Basic Information"></core:Title>
-                    <Label text="Employee ID"></Label>
-                    <Input ></Input>
-                    
-                    <Label text="Employee Name"></Label>
-                    <Input ></Input>
-                    
-                    <Label text="Employee Skills"></Label>
-                    <Input ></Input>
-                    <core:Title text="Basic Contact"></core:Title>
-                    <Label text="Employee Designation"></Label>
-                    <Input ></Input>
-                    
-                    <Label text="Age"></Label>
-                    <Input ></Input>
-                    
-                    <Label text="Phone No"></Label >
-                    <Input ></Input>
-                    </f:content> 
-                </f:SimpleForm>
-</IconTabFilter>
-                    <IconTabFilter icon="sap-icon://notes">
-                    <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"  labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
-                    <f:content> 
+                        <f:SimpleForm title="Products Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
+                            <f:content>
+                                <core:Title text="Basic Information"></core:Title>
+                                <Label text="Products ID"></Label>
+                                <Input id="ProductId"></Input>
 
-                    <Label text="Employee ID"  ></Label>
-                    <Input id="EmpID" value="{/empId}" maxLength="20"></Input>
-                    
-                    <Label text="Employee Name"  ></Label>
-                    <Input id="emp2" value="{/empName}"></Input>
-                    
-                    <Label text="Employee Skills"  ></Label>
-                    <Input id="emp3" value="{/empSkills}"></Input>
-                     
-                    <Label text="Employee Designation"  ></Label>
-                    <Input id="emp4" value="{/empDesignation}" ></Input>
-                    
-                    <Label text="Email"></Label>
-                    <Input id="emp5" value="{/Email}"></Input>
-                    
-                    <Label text="Phone No"></Label >
-                    <Input id="emp6" value="{/empphone}"></Input>
-                    </f:content> 
-                </f:SimpleForm>
-</IconTabFilter>
+                                <Label text="Products Name"></Label>
+                                <Input id="ProductName"></Input>
+
+                                <Label text="Products Skills"></Label>
+                                <Input id="Product" ></Input>
+                                <core:Title text="Basic Contact"></core:Title>
+                                <Label text="Products Designation"></Label>
+                                <Input  id="ProdDes"></Input>
+
+                                <Label text="Price"></Label>
+                                <Input id="Price"></Input>
+
+                                <Label text="Rating"></Label >
+                                <Input id="Rating"></Input>
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://notes">
+                        <f:SimpleForm title="Products Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4">
+                            <f:content>
+
+                                <Label text="Products ID"></Label>
+                                <Input id="EmpID" value="{/empId}" maxLength="20"></Input>
+
+                                <Label text="Products Name"></Label>
+                                <Input id="emp2" value="{/empName}"></Input>
+
+                                <Label text="Products Skills"></Label>
+                                <Input id="emp3" value="{/empSkills}"></Input>
+
+                                <Label text="Products Designation"></Label>
+                                <Input id="emp4" value="{/empDesignation}"></Input>
+
+                                <Label text="Email"></Label>
+                                <Input id="emp5" value="{/Email}"></Input>
+
+                                <Label text="Phone No"></Label >
+                                <Input id="emp6" value="{/empphone}"></Input>
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
                 </items>
             </IconTabBar>
 
-                        </content>
-        
-<footer>
-    <Bar >
-    <contentRight>
-        <Button id="close" text="Sumbit" press="Bsumbit" type="Emphasized"></Button>
-    </contentRight>
-    </Bar>
-</footer>
-</Page>
+        </content>
+
+        <footer>
+            <Bar >
+                <contentRight>
+                    <Button id="onSave" text="Save" press="onSave" type="Emphasized" icon="sap-icon://save"></Button>
+                    <Button id="onCancel" text="Back" press="onBack" type="Emphasized" icon="sap-icon://back"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
 </mvc:View>

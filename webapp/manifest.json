@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(qhgdetsjjnyar1ulworgyz41))/OData/OData.svc/",
+        "uri": "/V2/(S(uustrqjqlkhywkh4q1afessl))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -91,7 +91,10 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false
+        }
       }
     },
     "resources": {
@@ -121,7 +124,7 @@
         },
         {
           "name": "RouteView2",
-          "pattern": "sampleview",
+          "pattern": "sampleview/{prdid}",
           "target": [
             "TargetSample"
           ]
@@ -145,6 +148,13 @@
           "pattern": "Binding",
           "target": [
             "TargetFourth"
+          ]
+        },
+        {
+          "name": "RouteView6",
+          "pattern": "Edit",
+          "target": [
+            "TargetFifth"
           ]
         }
       ],
@@ -181,9 +191,18 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "v4",
+          "viewId": "v5",
           "viewName": "Binding"
+        },
+        "TargetFifth":{
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "v6",
+          "viewName": "Edit"
+
         }
+        
       }
     },
     "rootView": {
