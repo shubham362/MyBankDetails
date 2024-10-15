@@ -11,56 +11,86 @@ sap.ui.define([
     return Controller.extend("shubham.project1.controller.FormLayout", {
         onInit: function () {
 
-
-
+        },
+        onAdd: function () {
+            var row = new sap.m.ColumnListItem({
+                cells: [
+                    new sap.m.Input(),
+                    new sap.m.Input(),
+                    new sap.m.Input(),
+                    new sap.m.Input()
+                ]
+            });
+            this.getView().byId("CategoriesTable").addItem(row);
 
         },
         onNavBack: function () {
             var oNavContainer = this.getView().getParent();
             oNavContainer.back();
-            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
-        } ,
+            this.getOwnerComponent().getRouter().navTo("RouteView5");
+        },
         onBack: function () {
-        
+
             var oNavContainer = this.getView().getParent();
             oNavContainer.back();
-            this.getOwnerComponent().getRouter().navTo("RouteView5"); 
+            this.getOwnerComponent().getRouter().navTo("RouteView5");
         },
         onSave: function () {
+
+
+            var aSupplier = [ ];
+
+                //read the suppiler records
+
+            var aRows = this.getView().byId("CategoriesTable").getItems();
+            for (var i = 0; i < aRows; i++){
+                var supObj = {
+                    ID: supObj[i].getAggregation("cells")[0].getValue(),
+                    Name: supObj[i].getAggregation("cells")[1].getValue(),
+                    // Address: supObj[i].getAggregation("cells")[0].getValue(),
+                    
+                     
+                };
+                supObj.push(supObj);
+            }
+            
+
             var payload = {
-                // "ID": 0,
-                // "Name": "Bread",
-                // "Description": "Whole grain bread",
-                // "ReleaseDate": "/Date(694224000000)/",
-                // "DiscontinuedDate": null,
-                // "Rating": 4,
-                // "Price": "2.5"
+                                                                              
 
                 ID: this.getView().byId("ProductId").getValue(),
                 Name: this.getView().byId("ProductName").getValue(),
                 Description: this.getView().byId("ProdDes").getValue(),
                 Price: this.getView().byId("Price").getValue(),
-                Rating: this.getView().byId("Rating").getValue()
+                Rating: this.getView().byId("Rating").getValue(),
+                Supplier:aSupplier
             };
+            
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
             oModel.create("/Products", payload, {
-                success: function ( ) {
-                   
+                success: function () {
+
                     MessageBox.show("New Product has beeen Sucessfully Create", MessageBox.Icon.success, "Product Created");
                     this.onCancel();
                     oModel.refresh(true);
                 }.bind(this),
                 error: function () {
                     MessageBox.show("Sonme Error is comming check Intrenet Connectivity", MessageBox.Icon.success, "Oops");
-                   // this.onCancel();
+                    // this.onCancel();
                 }
             })
 
         },
-
-        onCancel:function () {
-                this.getView().byId("ProductId").setValue(" "),
+                                                                                            // "ID": 0,
+                                                                                            // "Name": "Bread",
+                                                                                            // "Description": "Whole grain bread",
+                                                                                            // "ReleaseDate": "/Date(694224000000)/",
+                                                                                            // "DiscontinuedDate": null,
+                                                                                            // "Rating": 4,
+                                                                                            // "Price": "2.5"
+        onCancel: function () {
+            this.getView().byId("ProductId").setValue(" "),
                 this.getView().byId("ProductName").setValue(" "),
                 this.getView().byId("ProdDes").setValue(" "),
                 this.getView().byId("Price").setValue(" "),

@@ -5,10 +5,59 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form" controllerName="shubham.project1.controller.Binding" displayBlock="true">
-    <Page id="Bd" showNavButton="true" navButtonPress="onNavBack">
+    <Page id="Bd" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack ">
         <content>
 
-            <List id="LstProd" items="{/Products}" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
+
+            <Table id="LstProd" items="{/Products}" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
+                <headerToolbar>
+                    <Toolbar >
+                        <Label text="Products" design="Bold" class="sapMH3FontSize"></Label>
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <SearchField id="search" width="30%" liveChange="onSearch"></SearchField>
+                        <Button icon="sap-icon://add" press="onAdd"></Button>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="Product ID"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Product Name"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Product Address"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Product Price"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Product Date"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Label id="id" text="{ID}"></Label>
+                        </cells>
+                        <cells>
+                            <Label id="Name" text="{Name}"></Label>
+                        </cells>
+                        <cells>
+                            <Label id="Description" text="{Description}"></Label>
+                        </cells>
+                        <cells>
+                            <Label id="Prices" text="{Price}"></Label>
+                        </cells>
+                        <cells>
+                            <Label id="Date" text="{ReleaseDate}"></Label>
+                        </cells>
+
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <!-- <List id="LstProd" items="{/Products}" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
                 <headerToolbar>
                     <Toolbar id="toolbar">
                                
@@ -25,16 +74,14 @@
                     </attributes>
                     	 
                <firstStatus>
-				<ObjectStatus id="st"
-					text="Available"
-					state="Success" />
+				<ObjectStatus id="st" text="Available" state="Success" />
 			</firstStatus>
             <markers>
 				<ObjectMarker id="oo" type="Favorite" />
 				<ObjectMarker id="kk" type="Flagged" />
 			</markers>
                 </ObjectListItem>
-            </List>
+            </List> -->
 
             <!-- <List items="{/aEmployees}" headerText="Employee List">
         <ObjectListItem title="{empname}" number="{empid}" numberUnit="{empdesignation}">
