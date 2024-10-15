@@ -23,7 +23,6 @@ sap.ui.define([
             this.getOwnerComponent().getRouter().navTo("RouteView3", {
                 prdid: PrId
 
-
                 // alert();
                 // var sPath = oEvent.getParameter("listItem").getBindingContext().getPath();
                 // var index = sPath.split("/", [2]);
@@ -61,6 +60,19 @@ sap.ui.define([
 
         //     // Apply the sorter to the binding
         //     oBinding.sort(oSorter);
+        // },
+        // onAdd: function () {
+        //     var row = new sap.m.ColumnListItem({
+        //         cells: [
+        //             new sap.m.Input(),
+        //             new sap.m.Input(),
+        //             new sap.m.Input(),
+        //             new sap.m.Input(),
+        //             new sap.m.Input(),
+        //         ]
+        //     });
+        //     this.getView().byId("LstProd").addItem(row);
+
         // },
         onCreate: function () {
             this.getOwnerComponent().getRouter().navTo("RouteView4");
