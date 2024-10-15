@@ -49,11 +49,11 @@ sap.ui.define([
                    
                     MessageBox.show("New Product has beeen Sucessfully Create", MessageBox.Icon.success, "Product Created");
                     this.onCancel();
-                     
+                    oModel.refresh(true);
                 }.bind(this),
                 error: function () {
                     MessageBox.show("Sonme Error is comming check Intrenet Connectivity", MessageBox.Icon.success, "Oops");
-                    this.onCancel();
+                   // this.onCancel();
                 }
             })
 
