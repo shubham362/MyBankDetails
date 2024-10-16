@@ -19,13 +19,16 @@ sap.ui.define([
 
         onUpdate: function () {
             var PId = this.getView().byId("ProductId_").getValue().trim();
+
+          //  var ReleaseDatee = this.getView().byId("ReleaseDate").getValue();
             
             var payload = {
                 ID: this.getView().byId("ProductId_").getValue(),
                 Name: this.getView().byId("ProductName_").getValue(),
                 Description: this.getView().byId("ProdDes_").getValue(),
                 Price: this.getView().byId("Price_").getValue(),
-                Rating: this.getView().byId("Rating_").getValue()
+                Rating: this.getView().byId("Rating_").getValue(),
+                ReleaseDate: this.getView().byId("ReleaseDatee").getValue()
             };
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();

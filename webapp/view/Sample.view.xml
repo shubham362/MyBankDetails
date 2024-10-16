@@ -27,6 +27,13 @@
 
                     <Label text="Rating"></Label >
                     <Input id="Rating_" width="50%" value="{Rating}"></Input>
+                    <Label text="ReleaseDate"></Label >
+                    <DateTimePicker
+                                    id="ReleaseDatee"
+                                    width="50%"
+                                    value="{ReleaseDate}"
+                                    placeholder="Enter Date &amp; Time"
+                                    class="sapUiSmallMarginBottom" />
                 </f:content>
             </f:SimpleForm>
             <!-- <FlexBox justifyContent="Center" alignItems="Center" height="100%">

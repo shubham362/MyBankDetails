@@ -66,9 +66,13 @@
 
                                 <Label text="Price" id="mmm"></Label>
                                 <Text id="Emailtxt"   text="{Price} Rs" ></Text>
-
-                                <Label text="Phone No" id="lk"></Label >
-                                <Text id="Phonetxt" text="{/empphone}"></Text>
+                                <Label id="date" text="ReleaseDate"></Label >
+                                 <DateTimePicker
+                                    id="ReleaseDatea"
+                                    width="50%"
+                                    value="{ReleaseDate}"
+                                    placeholder="Enter Date &amp; Time"
+                                    class="sapUiSmallMarginBottom" />
                                 
                             </f:content>
                         </f:SimpleForm>

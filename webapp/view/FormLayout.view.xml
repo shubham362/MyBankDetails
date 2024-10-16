@@ -5,13 +5,12 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form" 
-    controllerName="shubham.project1.controller.FormLayout" displayBlock="true">
+    xmlns:f="sap.ui.layout.form" controllerName="shubham.project1.controller.FormLayout" displayBlock="true">
 
     <Page id="form" title="Wasing Machine Information" showNavButton="true" navButtonPress="onNavBack">
 
         <content>
-<!-- 
+            <!-- 
             <ObjectHeader id="h" title="Washing Machine" number="3000" numberUnit="INR" backgroundDesign="Solid">
                 <attributes>
                     <ObjectAttribute title="Matrial Id" text="MAT003" id="1"></ObjectAttribute>
@@ -24,7 +23,7 @@
             <IconTabBar >
                 <items>
                     <IconTabFilter icon="sap-icon://dimension">
-                        <f:SimpleForm title="Products Details"  class="sapMH3FontSize" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
+                        <f:SimpleForm title="Products Details" class="sapMH3FontSize" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
                             <f:content>
                                 <core:Title text="Basic Information"></core:Title>
                                 <Label text="Products ID"></Label>
@@ -34,16 +33,22 @@
                                 <Input id="ProductName"></Input>
 
                                 <Label text="Products Skills"></Label>
-                                <Input id="Product" ></Input>
+                                <Input id="Product"></Input>
                                 <!-- <core:Title text="Basic Contact"></core:Title> -->
                                 <Label text="Products Designation"></Label>
-                                <Input  id="ProdDes"></Input>
+                                <Input id="ProdDes"></Input>
 
                                 <Label text="Price"></Label>
                                 <Input id="Price"></Input>
 
                                 <Label text="Rating"></Label >
                                 <Input id="Rating"></Input>
+                                <Label text="Date"></Label >
+                                <DateTimePicker
+                                    id="ReleaseDate"
+                                    width="100%"
+                                    placeholder="Enter Date &amp; Time"
+                                    class="sapUiSmallMarginBottom" />
                             </f:content>
                         </f:SimpleForm>
                     </IconTabFilter>
@@ -74,7 +79,7 @@
                 </items>
             </IconTabBar>
 
-            <Table id="CategoriesTable" >
+            <Table id="CategoriesTable">
                 <headerToolbar>
                     <Toolbar >
                         <Label text="Suppiler Items" design="Bold" class="sapMH3FontSize"></Label>
@@ -86,18 +91,18 @@
                     <Column >
                         <Text text="SuppilerId"></Text>
                     </Column>
-                        <Column >
+                    <Column >
                         <Text text="SuppilerName"></Text>
                     </Column>
-                        <Column >
+                    <Column >
                         <Text text="Suppiler Address"></Text>
                     </Column>
                     <Column >
                         <Text text="Suppiler Concurrency"></Text>
                     </Column>
-                     
+
                 </columns>
-                 
+
             </Table>
 
         </content>

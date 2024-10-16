@@ -38,23 +38,23 @@ sap.ui.define([
         onSave: function () {
 
 
-            var aSupplier = [ ];
+            // var aSupplier = [ ];
 
-                //read the suppiler records
+            //     //read the suppiler records
 
-            var aRows = this.getView().byId("CategoriesTable").getItems();
-            for (var i = 0; i < aRows; i++){
-                var supObj = {
-                    ID: supObj[i].getAggregation("cells")[0].getValue(),
-                    Name: supObj[i].getAggregation("cells")[1].getValue(),
-                    // Address: supObj[i].getAggregation("cells")[0].getValue(),
+            // var aRows = this.getView().byId("CategoriesTable").getItems();
+            // for (var i = 0; i < aRows; i++){
+            //     var supObj = {
+            //         ID: supObj[i].getAggregation("cells")[0].getValue(),
+            //         Name: supObj[i].getAggregation("cells")[1].getValue(),
+            //         // Address: supObj[i].getAggregation("cells")[0].getValue(),
                     
                      
-                };
-                supObj.push(supObj);
-            }
+            //     };
+            //     supObj.push(supObj);
+            // }
             
-
+            var sDateTimeValue = this.getView().byId("ReleaseDate").getValue();
             var payload = {
                                                                               
 
@@ -63,7 +63,8 @@ sap.ui.define([
                 Description: this.getView().byId("ProdDes").getValue(),
                 Price: this.getView().byId("Price").getValue(),
                 Rating: this.getView().byId("Rating").getValue(),
-                Supplier:aSupplier
+                ReleaseDate: sDateTimeValue
+              //  Supplier:aSupplier
             };
             
             console.log(payload);
