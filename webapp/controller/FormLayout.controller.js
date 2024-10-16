@@ -18,11 +18,28 @@ sap.ui.define([
                     new sap.m.Input(),
                     new sap.m.Input(),
                     new sap.m.Input(),
-                    new sap.m.Input()
+                    new sap.m.Input(),
+                    new sap.m.Button({
+                        text: "delete",
+
+                        press: this.onRemove.bind(this)  // Bind to the controller's delete function
+                    })
+
                 ]
             });
             this.getView().byId("CategoriesTable").addItem(row);
 
+        },
+        onRemove: function () {
+            var oTable = this.byId("CategoriesTable");
+
+            // Get the first row (index 0) and remove it
+            var oRow = oTable.getItems()[0];  // This retrieves the first row
+
+            if (oRow) {
+                oTable.removeItem(oRow);  // Remove the row from the table
+                oRow.destroy();  // Destroy the row to free memory
+            }
         },
         onNavBack: function () {
             var oNavContainer = this.getView().getParent();
@@ -35,6 +52,7 @@ sap.ui.define([
             oNavContainer.back();
             this.getOwnerComponent().getRouter().navTo("RouteView5");
         },
+
         onSave: function () {
 
 
@@ -48,15 +66,15 @@ sap.ui.define([
             //         ID: supObj[i].getAggregation("cells")[0].getValue(),
             //         Name: supObj[i].getAggregation("cells")[1].getValue(),
             //         // Address: supObj[i].getAggregation("cells")[0].getValue(),
-                    
-                     
+
+
             //     };
             //     supObj.push(supObj);
             // }
-            
+
             var sDateTimeValue = this.getView().byId("ReleaseDate").getValue();
             var payload = {
-                                                                              
+
 
                 ID: this.getView().byId("ProductId").getValue(),
                 Name: this.getView().byId("ProductName").getValue(),
@@ -64,9 +82,10 @@ sap.ui.define([
                 Price: this.getView().byId("Price").getValue(),
                 Rating: this.getView().byId("Rating").getValue(),
                 ReleaseDate: sDateTimeValue
-              //  Supplier:aSupplier
+                //  Supplier:aSupplier
             };
-            
+
+
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
             oModel.create("/Products", payload, {
@@ -83,13 +102,13 @@ sap.ui.define([
             })
 
         },
-                                                                                            // "ID": 0,
-                                                                                            // "Name": "Bread",
-                                                                                            // "Description": "Whole grain bread",
-                                                                                            // "ReleaseDate": "/Date(694224000000)/",
-                                                                                            // "DiscontinuedDate": null,
-                                                                                            // "Rating": 4,
-                                                                                            // "Price": "2.5"
+        // "ID": 0,
+        // "Name": "Bread",
+        // "Description": "Whole grain bread",
+        // "ReleaseDate": "/Date(694224000000)/",
+        // "DiscontinuedDate": null,
+        // "Rating": 4,
+        // "Price": "2.5"
         onCancel: function () {
             this.getView().byId("ProductId").setValue(" "),
                 this.getView().byId("ProductName").setValue(" "),

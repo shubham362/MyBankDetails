@@ -8,6 +8,7 @@ sap.ui.define([
     'use strict';
     return Controller.extend("shubham.project1.controller.Binding", {
         onInit: function () {
+            
             // var oModel = new JSONModel(sap.ui.require.toUrl("model/Empmodel.json"));
             // this.getView().setModel(oModel);
 
@@ -50,6 +51,12 @@ sap.ui.define([
             this.getView().byId("LstProd").getBinding("items").filter(aFilter);
 
 
+        },
+        onAfterRendering: function() {
+            var oTable = this.byId("LstProd");
+            var oBinding = oTable.getBinding("items");  // Get the binding for the items aggregation
+            var oSorter = new Sorter("Name", false);  // false for ascending sort
+            oBinding.sort(oSorter);  // Apply the sorter to the binding
         },
         // onSort: function () {
         //     var oList = this.byId("LstProd"); // Replace with your list ID

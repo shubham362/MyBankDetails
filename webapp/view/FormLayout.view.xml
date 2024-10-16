@@ -44,11 +44,7 @@
                                 <Label text="Rating"></Label >
                                 <Input id="Rating"></Input>
                                 <Label text="Date"></Label >
-                                <DateTimePicker
-                                    id="ReleaseDate"
-                                    width="100%"
-                                    placeholder="Enter Date &amp; Time"
-                                    class="sapUiSmallMarginBottom" />
+                                <DateTimePicker id="ReleaseDate" width="100%" placeholder="Enter Date &amp; Time" class="sapUiSmallMarginBottom" />
                             </f:content>
                         </f:SimpleForm>
                     </IconTabFilter>
@@ -85,6 +81,7 @@
                         <Label text="Suppiler Items" design="Bold" class="sapMH3FontSize"></Label>
                         <ToolbarSpacer ></ToolbarSpacer>
                         <Button icon="sap-icon://add" press="onAdd"></Button>
+                        <Button id="oka" icon="sap-icon://cancel" press="onRemove"></Button>
                     </Toolbar>
                 </headerToolbar>
                 <columns>
@@ -99,6 +96,10 @@
                     </Column>
                     <Column >
                         <Text text="Suppiler Concurrency"></Text>
+                    </Column>
+                    <Column >
+                        <Text text=""></Text>
+                        
                     </Column>
 
                 </columns>

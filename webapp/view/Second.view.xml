@@ -67,6 +67,7 @@
                                 <Label text="Price" id="mmm"></Label>
                                 <Text id="Emailtxt"   text="{Price} Rs" ></Text>
                                 <Label id="date" text="ReleaseDate"></Label >
+                                  
                                  <DateTimePicker
                                     id="ReleaseDatea"
                                     width="50%"
