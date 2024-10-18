@@ -44,6 +44,8 @@
 
                                 <Label text="Rating"></Label >
                                 <Input id="Rating"></Input>
+                                <Label text="ReleaseDate"></Label >
+                                <DateTimePicker id="datmas"  displayFormat="yyyy-MM-dd HH:mm:ss" valueFormat="yyyy-MM-ddTHH:mm:ss" />
                             </f:content>
                         </f:SimpleForm>
                     </IconTabFilter>
@@ -80,6 +82,7 @@
                         <Label text="Suppiler Items" design="Bold" class="sapMH3FontSize"></Label>
                         <ToolbarSpacer ></ToolbarSpacer>
                         <Button icon="sap-icon://add" press="onAdd"></Button>
+                        <Button icon="sap-icon://cancel" press="onRemoveInput"></Button>
                     </Toolbar>
                 </headerToolbar>
                 <columns>

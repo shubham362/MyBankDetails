@@ -38,34 +38,35 @@ sap.ui.define([
         onSave: function () {
 
 
-            var aSupplier = [ ];
+            //   var aSupplier = [ ];
 
-                //read the suppiler records
+            //read the suppiler records
 
-            var aRows = this.getView().byId("CategoriesTable").getItems();
-            for (var i = 0; i < aRows; i++){
-                var supObj = {
-                    ID: supObj[i].getAggregation("cells")[0].getValue(),
-                    Name: supObj[i].getAggregation("cells")[1].getValue(),
-                    // Address: supObj[i].getAggregation("cells")[0].getValue(),
-                    
-                     
-                };
-                supObj.push(supObj);
-            }
-            
+            // var aRows = this.getView().byId("CategoriesTable").getItems();
+            // for (var i = 0; i < aRows; i++){
+            //     var supObj = {
+            //         ID: supObj[i].getAggregation("cells")[0].getValue(),
+            //         Name: supObj[i].getAggregation("cells")[1].getValue(),
+            //         // Address: supObj[i].getAggregation("cells")[0].getValue(),
+
+
+            //     };
+            //     supObj.push(supObj);
+            // }
+
 
             var payload = {
-                                                                              
+
 
                 ID: this.getView().byId("ProductId").getValue(),
                 Name: this.getView().byId("ProductName").getValue(),
                 Description: this.getView().byId("ProdDes").getValue(),
                 Price: this.getView().byId("Price").getValue(),
                 Rating: this.getView().byId("Rating").getValue(),
-                Supplier:aSupplier
+                ReleaseDate: this.getView().byId("ReleaseDate"),
+                // Supplier:aSupplier
             };
-            
+
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
             oModel.create("/Products", payload, {
@@ -82,19 +83,33 @@ sap.ui.define([
             })
 
         },
-                                                                                            // "ID": 0,
-                                                                                            // "Name": "Bread",
-                                                                                            // "Description": "Whole grain bread",
-                                                                                            // "ReleaseDate": "/Date(694224000000)/",
-                                                                                            // "DiscontinuedDate": null,
-                                                                                            // "Rating": 4,
-                                                                                            // "Price": "2.5"
+        // "ID": 0,
+        // "Name": "Bread",
+        // "Description": "Whole grain bread",
+        // "ReleaseDate": "/Date(694224000000)/",
+        // "DiscontinuedDate": null,
+        // "Rating": 4,
+        // "Price": "2.5"
         onCancel: function () {
-            this.getView().byId("ProductId").setValue(" "),
+              this.getView().byId("ProductId").setValue(" "),
                 this.getView().byId("ProductName").setValue(" "),
                 this.getView().byId("ProdDes").setValue(" "),
                 this.getView().byId("Price").setValue(" "),
                 this.getView().byId("Rating").setValue(" ")
+               this.getView().byId("ReleaseDate").setValue("");
+        },onRemoveInput: function() {
+            // Get reference to the VBox container
+            var oInputContainer = this.byId("CategoriesTable");
+        
+            // Get all the items (inputs) inside the VBox
+            var aItems = oInputContainer.getItems();
+        
+            // Remove the last input box dynamically
+            if (aItems.length > 0) {
+                var oLastInput = aItems[aItems.length - 1];  // Get the last input
+                oInputContainer.removeItem(oLastInput);      // Remove from the container
+                oLastInput.destroy();                        // Destroy the control
+            }
         },
 
         Bsumbit: function () {
