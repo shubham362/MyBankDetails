@@ -19,21 +19,22 @@ sap.ui.define([
 
         onUpdate: function () {
             var PId = this.getView().byId("ProductId_").getValue().trim();
-            
+
             var payload = {
                 ID: this.getView().byId("ProductId_").getValue(),
                 Name: this.getView().byId("ProductName_").getValue(),
                 Description: this.getView().byId("ProdDes_").getValue(),
                 Price: this.getView().byId("Price_").getValue(),
-                Rating: this.getView().byId("Rating_").getValue()
+                Rating: this.getView().byId("Rating_").getValue(),
+                ReleaseDate: this.getView().byId("ReleaseDate")
             };
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
-            var csrfToken = oModel.getHeaders()['x-csrf-token'];
+            // var csrfToken = oModel.getHeaders()['x-csrf-token'];
             oModel.update("/Products( " + PId + ")", payload, {
-                Headers: {
-                    "x-csrf-token": csrfToken
-                },
+                // Headers: {
+                //     "x-csrf-token": csrfToken
+                // },
                 success: function () {
                     MessageBox.show("The Product has beeen Sucessfully Update", MessageBox.Icon.success, "Product Created");
                 },

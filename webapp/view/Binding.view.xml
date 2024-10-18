@@ -15,6 +15,7 @@
                         <Label text="Products" design="Bold" class="sapMH3FontSize"></Label>
                         <ToolbarSpacer ></ToolbarSpacer>
                         <SearchField id="search" width="30%" liveChange="onSearch"></SearchField>
+                        <Button icon="sap-icon://excel-attachment" press="onExport"/>
                         <Button icon="sap-icon://add" press="onAdd"></Button>
                     </Toolbar>
                 </headerToolbar>

@@ -10,7 +10,7 @@
             <f:SimpleForm title="Products Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0">
                 <f:content>
                     <core:Title text="Basic Information"></core:Title>
-                    <Label text="Products ID" ></Label>
+                    <Label text="Products ID"></Label>
                     <Input id="ProductId_" width="50%" value="{ID}"></Input>
 
                     <Label text="Products Name"></Label>
@@ -27,6 +27,8 @@
 
                     <Label text="Rating"></Label >
                     <Input id="Rating_" width="50%" value="{Rating}"></Input>
+                    <Label text="ReleaseDate" id="mmmms"></Label>
+                    <DateTimePicker id="datms" value="{ReleaseDate}" width="50%" displayFormat="yyyy-MM-dd HH:mm:ss" valueFormat="yyyy-MM-ddTHH:mm:ss" />
                 </f:content>
             </f:SimpleForm>
             <!-- <FlexBox justifyContent="Center" alignItems="Center" height="100%">

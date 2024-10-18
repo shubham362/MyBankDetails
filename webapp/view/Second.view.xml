@@ -66,11 +66,14 @@
 
                                 <Label text="Price" id="mmm"></Label>
                                 <Text id="Emailtxt"   text="{Price} Rs" ></Text>
-
-                                <Label text="Phone No" id="lk"></Label >
-                                <Text id="Phonetxt" text="{/empphone}"></Text>
+                                <Label text="ReleaseDate" id="mmmm"></Label>
+                                <DateTimePicker id="datm"
+                                  
                                 
-                            </f:content>
+                            </f:content>      value="{ReleaseDate}"
+                                        displayFormat="yyyy-MM-dd HH:mm:ss"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ss"
+                                        />
                         </f:SimpleForm>
                     </IconTabFilter>
                     <IconTabFilter icon="sap-icon://notes">

@@ -2,9 +2,10 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/model/Sorter"
+    "sap/ui/model/Sorter",
+    'sap/ui/export/Spreadsheet',
 
-], function (Controller, FilterOperator, Filter, Sorter) {
+], function (Controller, FilterOperator, Filter, Sorter, Spreadsheet) {
     'use strict';
     return Controller.extend("shubham.project1.controller.Binding", {
         onInit: function () {
@@ -18,6 +19,71 @@ sap.ui.define([
 
             // this.getOwnerComponent().getRouter("RouteView3").attachedParameterMatched(this.onPattenMatched, this);
         },
+
+
+        onExport: function () {
+            var aCols, oRowBinding, oSettings, oSheet, oTable;
+
+            if (!this._oTable) {
+                this._oTable = this.byId('LstProd');
+            }
+
+            oTable = this._oTable;
+            oRowBinding = oTable.getBinding('items');
+            aCols = this.createColumnConfig();
+
+            oSettings = {
+                workbook: {
+                    columns: aCols,
+                    hierarchyLevel: 'Level'
+                },
+                dataSource: oRowBinding,
+                fileName: 'Table export sample.xlsx',
+                worker: false // We need to disable worker because we are using a MockServer as OData Service
+            };
+
+            oSheet = new Spreadsheet(oSettings);
+            oSheet.build().finally(function () {
+                oSheet.destroy();
+            });
+        },
+
+        createColumnConfig: function () {
+            return [
+                {
+                    label: "ID",
+                    property: "ID",
+                    type: "string"
+                },
+                {
+                    label: "Name",
+                    property: "Name",
+                    type: "string"
+                },
+                {
+                    label: "Description",
+                    property: "Description",
+                    type: "string"
+                },
+                {
+                    label: "ReleaseDate",
+                    property: "ReleaseDate",
+                    type: "Date"
+                },
+                {
+                    label: "Rating",
+                    property: "Rating",
+                    type: "number"
+                },
+                {
+                    label: "Price",
+                    property: "Price",
+                    type: "string"
+                }
+            ];
+        },
+
+
         onSecChng: function (oEvent) {
             var PrId = oEvent.getParameter("listItem").getBindingContext().getProperty("ID");
             this.getOwnerComponent().getRouter().navTo("RouteView3", {
