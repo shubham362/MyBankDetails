@@ -67,7 +67,13 @@
                                 <Label text="Price" id="mmm"></Label>
                                 <Text id="Emailtxt" text="{Price} Rs"></Text>
                                 <Label text="ReleaseDate" id="mmmm"></Label>
-                                <DateTimePicker editable="false" id="datm" width="20%" value="{ReleaseDate}" displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd" />
+                                  <DateTimePicker
+                                        id="myDateTimePickers"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ss"
+                                        displayFormat="dd-MM-yyyy HH:mm"
+                                        value="{ReleaseDate}"
+                                        placeholder="Select Date and Time" />
+                                
 
 
 

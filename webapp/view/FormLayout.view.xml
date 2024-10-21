@@ -45,7 +45,13 @@
                                 <Label text="Rating"></Label >
                                 <Input id="Rating"></Input>
                                 <Label text="ReleaseDate"></Label >
-                                <DateTimePicker id="datmas"  displayFormat="yyyy-MM-dd HH:mm:ss" valueFormat="yyyy-MM-ddTHH:mm:ss" />
+                                
+                                <DateTimePicker
+                                        id="myDateTimePicker"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ss"
+                                        displayFormat="dd-MM-yyyy HH:mm"
+                                        
+                                        placeholder="Select Date and Time" />
                             </f:content>
                         </f:SimpleForm>
                     </IconTabFilter>
