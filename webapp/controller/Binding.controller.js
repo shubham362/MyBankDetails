@@ -82,7 +82,12 @@ sap.ui.define([
                 }
             ];
         },
-
+        onBeforeRendering: function () {
+            var oList = this.byId("LstProd");
+            var oBinding = oList.getBinding("items");
+            var oSorter = new sap.ui.model.Sorter("Name", false);  // false = ascending
+            oBinding.sort(oSorter);
+        },
 
         onSecChng: function (oEvent) {
             var PrId = oEvent.getParameter("listItem").getBindingContext().getProperty("ID");

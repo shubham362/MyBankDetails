@@ -65,15 +65,13 @@
                                 <Text id="desctxt" text="{Description}"></Text>
 
                                 <Label text="Price" id="mmm"></Label>
-                                <Text id="Emailtxt"   text="{Price} Rs" ></Text>
+                                <Text id="Emailtxt" text="{Price} Rs"></Text>
                                 <Label text="ReleaseDate" id="mmmm"></Label>
-                                <DateTimePicker id="datm"
-                                  
-                                
-                            </f:content>      value="{ReleaseDate}"
-                                        displayFormat="yyyy-MM-dd HH:mm:ss"
-                                        valueFormat="yyyy-MM-ddTHH:mm:ss"
-                                        />
+                                <DateTimePicker editable="false" id="datm" width="20%" value="{ReleaseDate}" displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd" />
+
+
+
+                            </f:content>
                         </f:SimpleForm>
                     </IconTabFilter>
                     <IconTabFilter icon="sap-icon://notes">
