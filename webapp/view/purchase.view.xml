@@ -68,7 +68,7 @@
                             <Input id="input2" value="{HouseNumber}">
                                 <layoutData>
                                     <l:GridData id="grd1" span="XL1 L2 M2 S4" />
-                                </layoutData>
+                                </layoutData> 
                             </Input>
                             <Label id="lab3" text="ZIP Code/City" />
                             <Input id="input3" value="{ZIPCode}">
