@@ -30,11 +30,11 @@ sap.ui.define([
             };
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
-            // var csrfToken = oModel.getHeaders()['x-csrf-token'];
+             var csrfToken = oModel.getHeaders()['x-csrf-token'];
             oModel.update("/Products( " + PId + ")", payload, {
-                // Headers: {
-                //     "x-csrf-token": csrfToken
-                // },
+                Headers: {
+                    "x-csrf-token": csrfToken
+                },
                 success: function () {
                     MessageBox.show("The Product has beeen Sucessfully Update", MessageBox.Icon.success, "Product Created");
                 },

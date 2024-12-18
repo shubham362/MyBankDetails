@@ -10,7 +10,7 @@ sap.ui.define([
 
 
                 let OData = {
-                    "accountdetails": {
+                    "accountdetails": { 
                         "accountnum": "00000000009",
                         "name": "Techtutsindia",
                         "ifsc": "0000001",

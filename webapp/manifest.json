@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(tr3cmzdrynh2tnksohp2ibxv))/OData/OData.svc/",
+        "uri": "/V2/(S(zatrmyj4yfxhqyqplds1cpnb))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -156,6 +156,13 @@
           "target": [
             "TargetFifth"
           ]
+        },
+        {
+          "name": "RouteView6",
+          "pattern": "purchase",
+          "target": [
+            "TargetSixth"
+          ]
         }
       ],
       "targets": {
@@ -200,6 +207,13 @@
           "clearControlAggregation": false,
           "viewId": "v6",
           "viewName": "Edit"
+        },
+        "TargetSixth": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "v7",
+          "viewName": "purchase"
         }
       }
     },

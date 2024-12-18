@@ -12,7 +12,7 @@
 
             <Table id="LstProd" items="{/Products}" fixedLayout="Strict" autoPopinMode="true" contextualWidth="Auto" growing="true" mode="SingleSelectMaster" selectionChange="onSecChng" headerText="Products">
                 <dependents>
-                    <plugins:ColumnResizer/>
+                 <plugins:ColumnResizer/>
                 </dependents>
                 <headerToolbar>
 

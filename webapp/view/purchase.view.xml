@@ -1,0 +1,93 @@
+<mvc:View controllerName="shubham.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+    <Page id="page0" title="{i18n>Manage Purchase Order}" titleAlignment="Center">
+        <VBox id="vBox1" class="sapUiSmallMargin">
+            <HBox id="hBox1" class="sapUiSmallMargin">
+                <VBox id="vBox2" class="sapUiSmallMargin">
+                    <Label id="la" text="Search"/>
+                    <Input id="searcnh" value=""/>
+                </VBox>
+                <VBox id="vBox3" class="sapUiSmallMargin">
+                    <Label id="lq" text="Supplier"/>
+                    <Input id="idDepartment" value="{/empId}" showValueHelp="true" valueHelpRequest="onValueHelpRequestDepartment"/>
+                </VBox>
+                <VBox id="vBox4" class="sapUiSmallMargin">
+                    <Label id="lw" text="Purchase Group"/>
+                    <Input id="idPurchasingPlant" placeholder="Select Plants" value="{poModel>/PLANTSet}" showValueHelp="true" valueHelpRequest="onValueHelpRequestPurchasingPlant"/>
+                </VBox>
+                <VBox id="vBox5" class="sapUiSmallMargin">
+                    <Label id="le" text="Company Code"/>
+                    <Input id="idcompanyCode" placeholder="Select Company Code" value="{poModel>/COMPANYCODESet}" showValueHelp="true" valueHelpRequest="onValueHelpRequestCompanyCode"/>
+                </VBox>
+                <VBox id="vBox6" class="sapUiSmallMargin">
+                    <Label id="lr" text="Material"/>
+                    <Input id="idvendor" placeholder="Select Vendor" value="{poModel>/VENDORSet}" showValueHelp="true" valueHelpRequest="onValueHelpRequestVendor"/>
+                </VBox>
+                <VBox id="vBox7" class="sapUiSmallMargin">
+                    <Label id="lt" text="Status"/>
+                    <!--<Input id="idvendor" placeholder="Select Remarks" value="{poModel>/VENDORSet}" showValueHelp="true"-->                    <!-- valueHelpRequest="onValueHelpRequestVendor"/>-->
+                    <ComboBox id="selectStatus" placeholder="Select Status">
+                        <core:Item id="l1" key="I" text="INITIATED"/>
+                        <core:Item id="l2" key="C" text="COMPLETED"/>
+                        <core:Item id="l3" key="R" text="REJECTED"/>
+                        <core:Item id="l4" key="1" text="Level 1 completed"/>
+                        <core:Item id="l5" key="2" text="Level 2 completed"/>
+                        <core:Item id="l66" key="3" text="Level 3 completed"/>
+                        <core:Item id="l7" key="4" text="Level 4 completed"/>
+                    </ComboBox >
+                </VBox>
+            </HBox>
+            <HBox id="x1" justifyContent="End" width="100%">
+                <Button id="bt1" text="Reset filters" press="onResetFilters" type="Emphasized" class="sapUiSmallMarginEnd"/>
+                <Button id="bt2" text="Go" press="onGoPress" width="5rem" type="Emphasized"/>
+            </HBox>
+        </VBox>
+        <smartfilterbar:SmartFilterBar id="SmartFilterBar" entitySet="Products">
+            <smartfilterbar:controlConfiguration>
+                <smartfilterbar:ControlConfiguration id="smart" key="Id" label="Employee Id"/>
+            </smartfilterbar:controlConfiguration>
+        </smartfilterbar:SmartFilterBar>
+        <smarttable:SmartTable id="smarttable" smartFilterId="SmartFilterBar" editable="false" entitySet="Products" showRowCount="true" enableAutoBinding="true">
+            <Table selectionChange="onRowPress" mode="SingleSelectMaster" id="oTable"></Table>
+        </smarttable:SmartTable>
+        <Panel id="panel1" expandable="true" headerText="Card Details" width="auto" class="sapUiResponsiveMargin">
+            <content>
+                <VBox id="vbox1" class="sapUiSmallMargin">
+                    <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Address" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                        <f:content>
+                            <Label id="lab1" text="Name" />
+                            <Input id="name" value="{SupplierName}" />
+                            <Label id="lab2" text="Street/No." />
+                            <Input id="input1" value="{Street}"></Input>
+                            <Input id="input2" value="{HouseNumber}">
+                                <layoutData>
+                                    <l:GridData id="grd1" span="XL1 L2 M2 S4" />
+                                </layoutData>
+                            </Input>
+                            <Label id="lab3" text="ZIP Code/City" />
+                            <Input id="input3" value="{ZIPCode}">
+                                <layoutData>
+                                    <l:GridData id="grd2" span="XL1 L2 M2 S4" />
+                                </layoutData>
+                            </Input>
+                            <Input id="input4" value="{City}" />
+                            <Label id="lab" text="Country" />
+                            <Select id="country" selectedKey="{Country}">
+                                <items>
+                                    <core:Item id="item1" text="England" key="England"/>
+                                    <core:Item id="item2" text="Germany" key="Germany"/>
+                                    <core:Item id="item3" text="USA" key="USA"/>
+                                </items>
+                            </Select>
+                        </f:content>
+                    </f:SimpleForm>
+                </VBox>                <!-- <Text id="text" text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" /> --></content>
+        </Panel>
+    </Page>
+</mvc:View>

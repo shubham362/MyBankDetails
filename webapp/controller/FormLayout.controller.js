@@ -2,6 +2,7 @@ sap.ui.define([
     'sap/ui/core/mvc/Controller',
     'sap/m/MessageBox',
     "sap/ui/model/Filter",
+    "sap/ui/core/format/DateFormat",
     "sap/ui/model/FilterOperator",
     "sap/ui/model/odata/v2/ODataModel",
     "sap/ui/model/Sorter"
@@ -23,6 +24,9 @@ sap.ui.define([
             });
             this.getView().byId("CategoriesTable").addItem(row);
 
+        },
+        onRemoveInput:function(){
+            this.getOwnerComponent().getRouter().navTo("RouteView6");
         },
         onNavBack: function () {
             var oNavContainer = this.getView().getParent();
@@ -54,7 +58,7 @@ sap.ui.define([
             //     supObj.push(supObj);
             // }
 
-
+        
             var payload = {
 
 
@@ -63,10 +67,10 @@ sap.ui.define([
                 Description: this.getView().byId("ProdDes").getValue(),
                 Price: this.getView().byId("Price").getValue(),
                 Rating: this.getView().byId("Rating").getValue(),
-                ReleaseDate: this.getView().byId("ReleaseDate"),
+                ReleaseDate: this.getView().byId("myDateTimePicker")
                 // Supplier:aSupplier
             };
-
+        
             console.log(payload);
             var oModel = this.getOwnerComponent().getModel();
             oModel.create("/Products", payload, {
@@ -91,26 +95,28 @@ sap.ui.define([
         // "Rating": 4,
         // "Price": "2.5"
         onCancel: function () {
-              this.getView().byId("ProductId").setValue(" "),
+            this.getView().byId("ProductId").setValue(" "),
                 this.getView().byId("ProductName").setValue(" "),
                 this.getView().byId("ProdDes").setValue(" "),
                 this.getView().byId("Price").setValue(" "),
                 this.getView().byId("Rating").setValue(" ")
-               this.getView().byId("ReleaseDate").setValue("");
-        },onRemoveInput: function() {
-            // Get reference to the VBox container
-            var oInputContainer = this.byId("CategoriesTable");
-        
-            // Get all the items (inputs) inside the VBox
-            var aItems = oInputContainer.getItems();
-        
-            // Remove the last input box dynamically
-            if (aItems.length > 0) {
-                var oLastInput = aItems[aItems.length - 1];  // Get the last input
-                oInputContainer.removeItem(oLastInput);      // Remove from the container
-                oLastInput.destroy();                        // Destroy the control
-            }
-        },
+            this.getView().byId("ReleaseDate");
+        }
+        // }, onRemoveInput: function () {
+        //     // Get reference to the VBox container
+        //     var oInputContainer = this.byId("CategoriesTable");
+
+        //     // Get all the items (inputs) inside the VBox
+        //     var aItems = oInputContainer.getItems();
+
+        //     // Remove the last input box dynamically
+        //     if (aItems.length > 0) {
+        //         var oLastInput = aItems[aItems.length - 1];  // Get the last input
+        //         oInputContainer.removeItem(oLastInput);      // Remove from the container
+        //         oLastInput.destroy();                        // Destroy the control
+        //     }
+        // }
+        ,
 
         Bsumbit: function () {
 
